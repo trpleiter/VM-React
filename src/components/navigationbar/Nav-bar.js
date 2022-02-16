@@ -16,22 +16,19 @@ function NavigationBar({voediestomach, voedietalk, login}) {
             </a>
             <ul className={styles.navItems}>
                 <li>
-                    <a className={styles.navItem}
-                       id={voediestomach}
+                    <a className={`${styles.navItem} ${voediestomach}`}
                        href="voedie-stomach.html">
                         Voedie stomach
                     </a>
                 </li>
                 <li>
-                    <a className={styles.navItem}
-                       id={voedietalk}
+                    <a className={`${styles.navItem} ${voedietalk}`}
                        href="voedie-talk.html">
                         Voedie talk
                     </a>
                 </li>
                 <li>
-                    <a className={styles.navItem}
-                       id={login}
+                    <a className={`${styles.navItem} ${login}`}
                        href="login.html">
                         <img src={loginimg}
                              alt="login"

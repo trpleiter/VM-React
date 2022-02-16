@@ -25,3 +25,7 @@
     text-decoration: none;
     border-radius: 15px;
 }
+
+.footerItem:hover {
+    background-color: hsl(138, 70%, 80%);
+}

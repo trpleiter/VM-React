@@ -10,6 +10,8 @@ import voediemeals from './assets/voedie-logo-homepage.jpg';
 import navbottom from "./assets/nav-bottom.jpg";
 import loginimg from "./assets/login.svg";
 import menu from "./assets/menu.svg";
+import Footer from "./components/footer/Footer";
+
 
 
 function Index() {
@@ -47,67 +49,61 @@ function Index() {
                     vegetable costs more energy than it contains!
                 </aside>
 
-            <HomepageArticle
-        idart="delicious-food"
-        idimg="foodpic"
-        image={deliciousfood}
-        title="Delicious food"
-        content="There are all kinds of leftovers from previous meals and you have no idea what to make from it? Simple
+
+                <HomepageArticle
+                    idart="grid-article1"
+                    idimg="cozypic"
+                    image={cozydinner}
+                    title="Cosiness"
+                    content="We all know the moments when you fall into awkward silences during a delicious (Voedie)meal. Fear no longer,
+            ask us for random food jokes and get the conversation going again! 😉"
+
+                />
+                <HomepageArticle
+                    idart="grid-article2"
+                    idimg="wastepic"
+                    image={nowaste}
+                    title="Waste"
+                    content="To tackle the climate crisis, change in behavior at people themselves is often necessary. Did you know that
+            producing food has a huge impact on the environment? Throwing it away is therefore very unfortunate 😭.
+            Would you like to know more about the environmental impact of food production?
+            Click "
+                    link="https://ourworldindata.org/environmental-impacts-of-food"
+                    clickname="Here"
+                />
+
+                <HomepageArticle
+                    idart="grid-article3"
+                    idimg="foodpic"
+                    image={deliciousfood}
+                    title="Delicious food"
+                    content="There are all kinds of leftovers from previous meals and you have no idea what to make from it? Simple
             ingredients from unions and garlic to more complicated ingredients such as... celery?🥬 No problem, indicate
             which leftovers you have left and we will make sure you receive delicious recipes where these leftover
             ingredients are needed for! Did you finish all your leftovers? Good job, we will run the extra mile for you
             and also provide you with meals from scratch to enjoy, make sure you do not buy too much though!"
 
-        />
-
-    <HomepageArticle
-        idart="cozyart"
-        idimg="cozy-dinner"
-        image={cozydinner}
-        title="Cosiness"
-        content="We all know the moments when you fall into awkward silences during a delicious (Voedie)meal. Fear no longer,
-            ask us for random food jokes and get the conversation going again! 😉"
-
-    />
-    <HomepageArticle
-        idart="wasteart"
-        idimg="no-waste"
-        image={nowaste}
-        title="Waste"
-        content= "To tackle the climate crisis, change in behavior at people themselves is often necessary. Did you know that
-            producing food has a huge impact on the environment? Throwing it away is therefore very unfortunate 😭.
-            Would you like to know more about the environmental impact of food production?
-            Click "
-        link="https://ourworldindata.org/environmental-impacts-of-food"
-        clickname="Here"
-    />
+                />
 
                 <aside className="grid-item" id="grid-aside2">
-                    To get a glimp of what VoedieMeals is all about we posted a video where fine dishes out of leftovers are made!
+                    To get a glimp of what VoedieMeals is all about we posted a video where fine dishes out of leftovers
+                    are made!
                 </aside>
 
-                <iframe class="grid-item" id="ytvid" src="https://www.youtube.com/embed/Ge56ZwJat5A" title="YouTube video player"
+                <iframe class="grid-item" id="ytvid" src="https://www.youtube.com/embed/Ge56ZwJat5A"
+                        title="YouTube video player"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
             </main>
-            <footer className="grid-item" id="grid-footer">
-                <span>© 2022 VoedieMeals</span>
-                <ul>
-                    <li><a href="about-voediemeals.html">About us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                </ul>
-            </footer>
-    </>
-
+            <Footer />
+        </>
     )
 }
 
 
+ReactDOM.render(
+    Index(),
+    document.getElementById('root')
+);
 
-    ReactDOM.render(
-        Index(),
-        document.getElementById('root')
-    );
-
-    reportWebVitals();
+reportWebVitals();
