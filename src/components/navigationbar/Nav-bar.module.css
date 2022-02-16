@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --voediemealgreen: hsl(138, 70%, 84%);
+    --voediemealgrey: hsl(220, 3%, 45%);
+}
+
+body {
+    font-family: 'Source Code Pro', monospace;
+    background-color: white;
+    color: hsl(220, 3%, 45%);
+}
+
+.navContainer {
+    position: sticky;
+    top: 0;
+    background-color: var(--voediemealgreen);
+    color: var(--voediemealgrey);
+    border-style: double;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 120px;
+}
+
+.login {
+    width: 12px;
+}
+
+.navigatieDropdown {
+    width: 30px;
+    display: block;
+}
+
+.navigatieDropdown:hover {
+    cursor: pointer;
+}
+
+.navItems {
+    display: none;
+    list-style-type: none;
+}
+
+@media screen and (min-width: 768px) {
+    .navigatieDropdown {
+        display: none;
+    }
+
+    .navItems {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        flex-basis: 750px;
+    }
+
+    .navItem {
+        display: block;
+        color: var(--voediemealgrey);
+        text-align: center;
+        padding: 40px 40px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 15px;
+    }
+}

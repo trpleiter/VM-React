@@ -1,0 +1,27 @@
+.footerContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 12px;
+    background-color: var(--voediemealgreen);
+    color: var(--voediemealgrey);
+    border-style: double;
+}
+
+.footerItems {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-basis: 300px;
+}
+
+.footerItem {
+    display: block;
+    color: var(--voediemealgrey);
+    text-align: center;
+    padding: 5px 5px;
+    text-decoration: none;
+    border-radius: 15px;
+}
