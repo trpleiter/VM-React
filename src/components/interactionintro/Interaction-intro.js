@@ -1,6 +1,6 @@
 import React from "react";
 import voedielogo from '../../assets/voedie-logo.jpg';
-import styles from '../../components/interactionintro/Interactionintro.module.css';
+import styles from './Interactionintro.module.css';
 
 function InteractionIntro({intro, children}) {
     return (

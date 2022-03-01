@@ -1,0 +1,22 @@
+body {
+    font-family: 'Source Code Pro', monospace;
+    background-color: white;
+    color: var(--voediemealgrey);
+}
+
+p {
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.outer-container1 {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+}
+
+.outer-container2 {
+    display: flex;
+    height: auto;
+    flex-direction: row;
+}
