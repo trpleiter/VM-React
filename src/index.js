@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import "./styles/index.css"
 import reportWebVitals from './reportWebVitals';
-import AboutVoedieMeals from "./pages/aboutvoediemeals";
+import ForgotPassword from "./pages/forgot-password";
 function Index() {
     return (
-        <AboutVoedieMeals />
+        <ForgotPassword />
     )
 }
 

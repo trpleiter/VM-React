@@ -1,0 +1,15 @@
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 24px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+    padding: 50px;
+    border: 1px solid black;
+    background-image: linear-gradient(white, var(--voediemealgreen));
+    border-radius: 12px;
+    box-shadow: 10px 10px 5px var(--voediemealgrey);
+}

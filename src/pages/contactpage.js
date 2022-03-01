@@ -3,7 +3,7 @@ import '../styles/contactpage.css';
 import NavigationBar from "../components/navigationbar/Nav-bar";
 import InteractionIntro from "../components/interactionintro/Interaction-intro";
 import Footer from "../components/footer/Footer";
-import TextInput from "../components/TextInput/TextInput";
+import TextInput from "../components/textinput/TextInput";
 import EmailInput from "../components/emailinput/EmailInput";
 import Button from "../components/button/Button";
 

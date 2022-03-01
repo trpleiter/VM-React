@@ -1,0 +1,125 @@
+body {
+    color: var(--voediemealgrey)
+}
+
+.\=section-search {
+    background-color: var(--voediemealgrey);
+    color: var(--voediemealgreen);
+    text-align: center;
+    border: 1px solid black;
+    box-shadow: 10px 10px 5px var(--voediemealgreen);
+    border-radius: 15px;
+    height: 360px;
+    padding: 16px;
+    margin: 50px;
+    flex-basis: 300px;
+    flex-shrink: 1;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-icon {
+    border-radius: 10px;
+    height: 100px;
+    width: 100px;
+}
+
+.\=section-search h2 {
+    font-size: 30px;
+    padding: 40px;
+}
+
+.section-choose {
+    background-color: var(--voediemealgreen);
+    text-align: center;
+    border: 1px solid black;
+    box-shadow: 10px 10px 5px var(--voediemealgrey);
+    border-radius: 15px;
+    height: 360px;
+    padding: 16px;
+    margin: 50px;
+    flex-basis: 300px;
+    flex-shrink: 1;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#mouse-icon {
+    border-radius: 10px;
+    height: 100px;
+    width: 100px;
+}
+
+.section-choose h2 {
+    font-size: 30px;
+    padding: 40px;
+}
+
+.section-cook {
+    background-color: var(--voediemealgrey);
+    color: var(--voediemealgreen);
+    text-align: center;
+    border: 1px solid black;
+    box-shadow: 10px 10px 5px var(--voediemealgreen);
+    border-radius: 15px;
+    height: 360px;
+    padding: 16px;
+    margin: 50px;
+    flex-basis: 300px;
+    flex-shrink: 1;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#cook-icon {
+    border-radius: 10px;
+    height: 100px;
+    width: 100px;
+}
+
+.section-cook h2 {
+    font-size: 30px;
+    padding: 40px;
+}
+
+.searchbar {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#user-food-input {
+    font-size: large;
+    width: 600px;
+    padding: 16px;
+    border-radius: 8px;
+    margin-right: 8px;
+}
+
+h3 {
+    font-size: 30px;
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.background-container {
+    background-image: url("../assets/ingredients-background.jpg");
+}
+
+@media screen and (min-width: 768px) {
+    .tutorial-voediemaag {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}

@@ -1,0 +1,23 @@
+.recipeResults section{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-basis: 150px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    height: 200px;
+    padding: 16px;
+    margin: 50px;
+    border: 1px solid black;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px var(--voediemealgreen);
+}
+
+@media screen and (min-width: 768px) {
+    .recipeResults {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}

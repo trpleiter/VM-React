@@ -1,0 +1,89 @@
+body {
+    color: hsl(220, 3%, 45%);
+}
+
+.output-section {
+    background-image: url("../assets/ingredients-background.jpg");
+    padding-bottom: 100px;
+}
+
+.fact-or-joke {
+    background-color: var(--voediemealgrey);
+    color: var(--voediemealgreen);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-basis: 300px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    height: fit-content;
+    padding: 16px;
+    margin: 50px;
+    border: 1px solid black;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px var(--voediemealgreen);
+}
+
+.fact-or-joke p {
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.fact-or-joke button {
+    background-color: var(--voediemealgreen);
+    color: var(--voediemealgrey);
+    padding: 16px;
+    margin-top: 16px;
+    width: 200px;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.fact-or-joke button:hover {
+    background-color: hsl(138, 70%, 75%);
+}
+
+.personal-data {
+    background-color: var(--voediemealgreen);
+    color: var(--voediemealgrey);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-basis: 300px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    height: 400px;
+    padding: 16px;
+    margin: 50px;
+    border: 1px solid black;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px var(--voediemealgrey);
+}
+
+.personal-data p {
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.personal-data button {
+    background-color: var(--voediemealgrey);
+    color: var(--voediemealgreen);
+    padding: 16px;
+    width: 200px;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.personal-data button:hover {
+    background-color: hsl(220, 3%, 35%);
+}
+
+@media screen and (min-width: 768px) {
+    .output-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+}
