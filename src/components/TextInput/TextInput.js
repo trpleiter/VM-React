@@ -1,11 +1,11 @@
 import React from "react";
-import styles from '../../components/textinput/TextInput.module.css'
+import styles from './TextInput.module.css'
 
-function TextInput ( { placeholder, id, name} ) {
+function InputField ( { placeholder, id, name} ) {
     return (
         <>
     <input
-        type="text"
+        type="{type}"
         className={styles.inputField}
         placeholder={placeholder}
         id={id}
@@ -15,4 +15,4 @@ function TextInput ( { placeholder, id, name} ) {
     )
 }
 
-export default TextInput;
+export default InputField;

@@ -1,0 +1,38 @@
+body {
+    background-image: url("../assets/ingredients-background.jpg");
+    color: var(--voediemealgrey);
+}
+
+main {
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #dadce0;
+    display: block;
+    margin: 5% auto 5% auto;
+    width: 450px;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+
+.contact-container span {
+    text-align: center;
+    padding: 16px;
+}
+
+#user-message {
+    padding: 8px;
+    margin: 8px;
+    width: 250px;
+}
+
+#email-warning {
+    color: red;
+    padding: 0px;
+    font-size: 12px;
+}

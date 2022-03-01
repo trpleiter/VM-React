@@ -1,18 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;900&display=swap');
-
-* {
-    padding: 0;
-    margin: 0;
-}
-
-:root {
-    --voediemealgreen: hsl(138, 70%, 84%);
-    --voediemealgrey: hsl(220, 3%, 45%);
-}
-
 body {
-    font-family: 'Source Code Pro', monospace;
-    background-color: white;
     background-image: url("../assets/ingredients-background.jpg");
     color: hsl(220, 3%, 45%)
 }
@@ -68,22 +54,6 @@ main {
     margin-bottom: 16px;
     font-size: 12px;
     text-align: center;
-}
-
-
-button {
-    background-color: var(--voediemealgreen);
-    padding: 16px;
-    border: 1px solid black;
-    border-radius: 8px;
-}
-
-button:hover {
-    background-color: hsl(138, 70%, 75%);
-}
-
-.active {
-    border: 2px solid hsl(138, 70%, 75%);
 }
 
 .lower-footer {

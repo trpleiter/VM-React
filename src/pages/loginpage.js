@@ -2,11 +2,12 @@ import React from "react";
 import '../styles/loginpage.css'
 import NavigationBar from "../components/navigationbar/Nav-bar";
 import InteractionIntro from "../components/interactionintro/Interaction-intro";
-import TextInput from "../components/textinput/TextInput";
+import TextInput from "../components/TextInput/TextInput";
 import PasswordInput from "../components/passwordinput/PasswordInput";
+import Button from "../components/button/Button";
 import Footer from "../components/footer/Footer";
 
-function LoginPage () {
+function Loginpage () {
     return (
         <>
         <NavigationBar
@@ -14,10 +15,10 @@ function LoginPage () {
         />
     <main>
         <div className="login-container">
-            <InteractionIntro
-            intro="Login"
-            />
-            <p>Use your VoedieMeals-account</p>
+            <InteractionIntro intro="Login">
+
+                <p>Use your VoedieMeals-account</p>
+            </InteractionIntro>
             <TextInput
             placeholder="Username"
             id="username-field"
@@ -28,7 +29,7 @@ function LoginPage () {
             id="user-password-field"
             name="user-password"
             />
-            <div class="account-set">
+            <div className="account-set">
                 <ul>
                     <a href="forgot-password.html"> Forgot password?</a>
                     <a href="sign-up.html">Sign up</a>
@@ -36,13 +37,17 @@ function LoginPage () {
             </div>
             <span id="username-warning"></span>
             <span id="password-warning"></span>
-            <button type="submit">Login</button>
+            <Button
+            type="submit"
+            text="Login"
+            />
         </div>
     </main>
             <Footer
-            fillpage="lower-footer"/>
+            fillpage="lower-footer"
+            />
         </>
     )
 }
 
-export default LoginPage;
+export default Loginpage;

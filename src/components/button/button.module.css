@@ -1,0 +1,10 @@
+.btn {
+    background-color: var(--voediemealgreen);
+    padding: 16px;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.btn:hover {
+    background-color: hsl(138, 70%, 75%);
+}

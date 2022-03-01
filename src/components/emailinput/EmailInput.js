@@ -1,7 +1,7 @@
 import React from "react";
-import styles from './PasswordInput.module.css'
+import styles from './EmailInput.module.css'
 
-function PasswordInput ( { placeholder, id, name} ) {
+function EmailInput ( { placeholder, id, name} ) {
     return (
         <>
             <input
@@ -15,4 +15,4 @@ function PasswordInput ( { placeholder, id, name} ) {
     )
 }
 
-export default PasswordInput;
+export default EmailInput;
