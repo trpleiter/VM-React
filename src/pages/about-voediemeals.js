@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/aboutvoediemeals.css";
+import "../styles/about-voediemeals.css";
 import NavigationBar from "../components/navigationbar/Nav-bar";
 import AboutUs from "../components/aboutus/AboutUs";
 import AboutAside from "../components/aboutaside/AboutAside";

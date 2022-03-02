@@ -1,5 +1,5 @@
 import React from "react";
-import '../styles/faqpage.css';
+import '../styles/faq-page.css';
 import NavigationBar from "../components/navigationbar/Nav-bar";
 import Footer from "../components/footer/Footer";
 import QuestionContainer from "../components/questioncontainer/QuestionContainer";

@@ -1,5 +1,5 @@
 import React from "react";
-import '../styles/contactpage.css';
+import '../styles/contact-page.css';
 import NavigationBar from "../components/navigationbar/Nav-bar";
 import InteractionIntro from "../components/interactionintro/Interaction-intro";
 import Footer from "../components/footer/Footer";
