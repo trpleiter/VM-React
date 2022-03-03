@@ -25,6 +25,19 @@ main {
     padding: 16px;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.input-field {
+    padding: 8px;
+    margin: 8px;
+    width: 250px;
+}
+
 .account-set {
     font-style: italic;
     font-size: 10px;
@@ -44,7 +57,7 @@ main {
 #username-warning {
     color: red;
     padding: 0px;
-    margin-bottom: 0px;
+    margin-bottom: 16px;
     font-size: 12px;
 }
 

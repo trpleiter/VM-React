@@ -1,7 +1,9 @@
 import React from "react";
-import styles from './PasswordInput.module.css'
+import styles from './PasswordInput.module.css';
+import { useForm } from 'react-hook-form';
 
-function PasswordInput ( { placeholder, id, name} ) {
+function PasswordInput ( { placeholder, id, name } ) {
+    const { register } = useForm();
     return (
         <>
             <input
@@ -9,7 +11,7 @@ function PasswordInput ( { placeholder, id, name} ) {
                 className={styles.inputField}
                 placeholder={placeholder}
                 id={id}
-                name={name}
+                {...register({name})}
             />
         </>
     )

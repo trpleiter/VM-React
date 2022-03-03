@@ -1,16 +1,16 @@
 import React from "react";
-import styles from './TextInput.module.css'
+import styles from './TextInput.module.css';
 
-function InputField ( { placeholder, id, name} ) {
+function InputField({placeholder, id, children}) {
     return (
         <>
-    <input
-        type="{type}"
-        className={styles.inputField}
-        placeholder={placeholder}
-        id={id}
-        name={name}
-    />
+            <input
+                type="{type}"
+                className={styles.inputField}
+                placeholder={placeholder}
+                id={id}
+            />
+            {children}
         </>
     )
 }

@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import "./styles/index.css"
 import reportWebVitals from './reportWebVitals';
-import SuccesfullPassChange from "./pages/succesfull-pass-change";
+import SignUp from "./pages/sign-up";
 function Index() {
     return (
-        <SuccesfullPassChange />
+        <SignUp />
     )
 }
 

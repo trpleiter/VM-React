@@ -5,7 +5,7 @@ function EmailInput ( { placeholder, id, name} ) {
     return (
         <>
             <input
-                type="password"
+                type="email"
                 className={styles.inputField}
                 placeholder={placeholder}
                 id={id}
