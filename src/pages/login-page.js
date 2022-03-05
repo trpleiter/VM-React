@@ -58,7 +58,7 @@ function Loginpage() {
                                 ,
                                 maxLength: {
                                     value: 25,
-                                    message: "Your username can only contain 25 characters."
+                                    message: "Your password can only contain 25 characters."
                                 }
                             })}
                         />

@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import "./styles/index.css"
 import reportWebVitals from './reportWebVitals';
-import SignUp from "./pages/sign-up";
+import Contactpage from "./pages/contact-page";
 function Index() {
     return (
-        <SignUp />
+        <Contactpage />
     )
 }
 

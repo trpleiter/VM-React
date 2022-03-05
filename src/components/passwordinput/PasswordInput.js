@@ -11,7 +11,6 @@ function PasswordInput ( { placeholder, id, name } ) {
                 className={styles.inputField}
                 placeholder={placeholder}
                 id={id}
-                {...register({name})}
             />
         </>
     )

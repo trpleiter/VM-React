@@ -25,6 +25,12 @@ main {
     padding: 16px;
 }
 
+.input-field {
+    padding: 8px;
+    margin: 8px;
+    width: 250px;
+}
+
 #user-message {
     padding: 8px;
     margin: 8px;
@@ -35,4 +41,13 @@ main {
     color: red;
     padding: 0px;
     font-size: 12px;
+    margin-bottom: 16px;
+}
+
+.lower-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 25px;
+    width: 100%;
 }

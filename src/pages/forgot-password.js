@@ -4,9 +4,14 @@ import NavigationBar from "../components/navigationbar/Nav-bar";
 import InteractionIntro from "../components/interactionintro/Interaction-intro";
 import Button from "../components/button/Button";
 import Footer from "../components/footer/Footer";
-import EmailInput from "../components/emailinput/EmailInput";
+import {useForm} from "react-hook-form";
 
 function ForgotPassword() {
+    const {register, handleSubmit, formState: {errors} } = useForm({mode: 'onBlur'});
+    function onFormSubmit(data) {
+        console.log(data);
+    }
+
     return (
         <>
             <NavigationBar
@@ -17,19 +22,28 @@ function ForgotPassword() {
                         <h3>Reset password</h3>
                         <span>Enter the email associated with your account and we will send an email with instructions to reset your password</span>
                     </InteractionIntro>
-
-                    <EmailInput
-                        placeholder="E-mailadress"
+                    <form onSubmit={handleSubmit(onFormSubmit)}>
+                    <input
+                        type="email"
+                        className="input-field"
+                        placeholder="Enter your e-mailadress.."
                         id="user-email-field"
-                        name="user-email"
+                        {...register("email", {
+                            required: "Your emailadress is required",
+                            pattern: {
+                                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                message: "Invalid email address",
+                            }
+                        })}
                     />
-                    <span id="email-warning"></span>
 
+                    {errors.email && <span id="email-warning">{errors.email.message}</span>}
 
                     <Button
                         type="submit"
                         text="Send instructions!"
                     />
+                    </form>
                 </div>
             </main>
             <Footer
