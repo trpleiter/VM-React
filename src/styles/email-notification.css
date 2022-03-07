@@ -1,6 +1,8 @@
-body {
+.page-container {
     background-image: url("../assets/ingredients-background.jpg");
     color: var(--voediemealgrey);
+    height: 60vh;
+    padding:200px;
 }
 
 .email-main {

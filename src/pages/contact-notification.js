@@ -11,6 +11,7 @@ function ContactNotification() {
         <>
             <NavigationBar
             />
+            <div className="page-container">
             <main className="email-main">
                 <div className="email-notification-container">
                     <InteractionIntro>
@@ -30,6 +31,7 @@ function ContactNotification() {
             <Footer
                 fillpage="lower-footer"
             />
+            </div>
         </>
     )
 }

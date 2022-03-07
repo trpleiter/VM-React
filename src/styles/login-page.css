@@ -1,6 +1,8 @@
 .page-container {
     background-image: url("../assets/ingredients-background.jpg");
-    color: hsl(220, 3%, 45%)
+    color: var(--voediemealgrey);
+    height: 60vh;
+    padding:200px;
 }
 
 .account-main {
@@ -8,7 +10,7 @@
     border-radius: 8px;
     border: 1px solid #dadce0;
     display: block;
-    margin: 100px auto 0px auto;
+    margin: 0px auto 0px auto;
     width: 450px;
 }
 
@@ -23,6 +25,7 @@
 .login-container p {
     font-size: 14px;
     padding: 16px;
+    margin-bottom: 0px;
 }
 
 form {

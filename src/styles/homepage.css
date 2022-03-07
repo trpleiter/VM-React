@@ -96,6 +96,7 @@ header {
     border: solid 1px var(--voediemealgrey);
     box-shadow: 10px 10px 5px var(--voediemealgrey);
     padding: 16px;
+    margin: 0px;
 }
 
 #grid-aside1 {

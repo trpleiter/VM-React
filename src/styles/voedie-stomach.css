@@ -9,7 +9,7 @@ body {
     border: 1px solid black;
     box-shadow: 10px 10px 5px var(--voediemealgreen);
     border-radius: 15px;
-    height: 360px;
+    height: 450px;
     padding: 16px;
     margin: 50px;
     flex-basis: 300px;
@@ -30,6 +30,11 @@ body {
 .\=section-search h2 {
     font-size: 30px;
     padding: 40px;
+    margin: 0px;
+}
+
+.\=section-search p {
+    margin: 0px;
 }
 
 .section-choose {
@@ -38,7 +43,7 @@ body {
     border: 1px solid black;
     box-shadow: 10px 10px 5px var(--voediemealgrey);
     border-radius: 15px;
-    height: 360px;
+    height: 450px;
     padding: 16px;
     margin: 50px;
     flex-basis: 300px;
@@ -59,6 +64,11 @@ body {
 .section-choose h2 {
     font-size: 30px;
     padding: 40px;
+    margin: 0px;
+}
+
+.section-choose p {
+    margin: 0px;
 }
 
 .section-cook {
@@ -68,7 +78,7 @@ body {
     border: 1px solid black;
     box-shadow: 10px 10px 5px var(--voediemealgreen);
     border-radius: 15px;
-    height: 360px;
+    height: 450px;
     padding: 16px;
     margin: 50px;
     flex-basis: 300px;
@@ -89,6 +99,10 @@ body {
 .section-cook h2 {
     font-size: 30px;
     padding: 40px;
+    margin: 0px;
+}
+.section-cook p {
+    margin: 0px;
 }
 
 .searchbar {

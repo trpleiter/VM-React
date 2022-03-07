@@ -21,95 +21,97 @@ function SignUp() {
             <NavigationBar
                 login="active"
             />
-            <main className="account-main">
-                <div className="login-container">
-                    <InteractionIntro intro="Create your VoedieMeals-account"
-                    />
-                    <form onSubmit={handleSubmit(onFormSubmit)}>
-                        <input
-                            type="text"
-                            className="input-field"
-                            placeholder="Enter an username.."
-                            id="username-field"
-                            {...register("username", {
-                                required: "Username is required",
-                                minLength: {
-                                    value: 3,
-                                    message: "Your username must contain at least 3 characters."
-                                }
-                                ,
-                                maxLength: {
-                                    value: 12,
-                                    message: "Your username can only contain 12 characters."
-                                }
-                                ,
-                            })}
+            <div className="page-container">
+                <main className="account-main">
+                    <div className="login-container">
+                        <InteractionIntro intro="Create your VoedieMeals-account"
                         />
+                        <form onSubmit={handleSubmit(onFormSubmit)}>
+                            <input
+                                type="text"
+                                className="input-field"
+                                placeholder="Enter an username.."
+                                id="username-field"
+                                {...register("username", {
+                                    required: "Username is required",
+                                    minLength: {
+                                        value: 3,
+                                        message: "Your username must contain at least 3 characters."
+                                    }
+                                    ,
+                                    maxLength: {
+                                        value: 12,
+                                        message: "Your username can only contain 12 characters."
+                                    }
+                                    ,
+                                })}
+                            />
 
-                        <input
-                            type="email"
-                            className="input-field"
-                            placeholder="Enter your e-mailadress.."
-                            id="user-email-field"
-                            {...register("email", {
-                                required: "Your emailadress is required",
-                                pattern: {
-                                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                                    message: "Invalid email address",
-                                }
-                            })}
-                        />
+                            <input
+                                type="email"
+                                className="input-field"
+                                placeholder="Enter your e-mailadress.."
+                                id="user-email-field"
+                                {...register("email", {
+                                    required: "Your emailadress is required",
+                                    pattern: {
+                                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                        message: "Invalid email address",
+                                    }
+                                })}
+                            />
 
-                        <input
-                            type="password"
-                            className="input-field"
-                            placeholder="Enter your password.."
-                            id="user-password-field1"
-                            {...register("password", {
-                                required: "Your password is required",
-                                minLength: {
-                                    value: 6,
-                                    message: "Your password must contain at least 6 characters"
-                                }
-                                ,
-                                maxLength: {
-                                    value: 25,
-                                    message: "Your username can only contain 25 characters"
-                                }
-                            })}
-                        />
-                        <input
-                            type="password"
-                            className="input-field"
-                            placeholder="Confirm your password.."
-                            id="user-password-field2"
-                            {...register("confirmpassword", {
-                                required: "You have to confirm your password",
-                                message:"The passwords do not match",
-                                validate: value =>
-                                    value === password.current || "The passwords do not match"
-                            })}
-                        />
+                            <input
+                                type="password"
+                                className="input-field"
+                                placeholder="Enter your password.."
+                                id="user-password-field1"
+                                {...register("password", {
+                                    required: "Your password is required",
+                                    minLength: {
+                                        value: 6,
+                                        message: "Your password must contain at least 6 characters"
+                                    }
+                                    ,
+                                    maxLength: {
+                                        value: 25,
+                                        message: "Your username can only contain 25 characters"
+                                    }
+                                })}
+                            />
+                            <input
+                                type="password"
+                                className="input-field"
+                                placeholder="Confirm your password.."
+                                id="user-password-field2"
+                                {...register("confirmpassword", {
+                                    required: "You have to confirm your password",
+                                    message: "The passwords do not match",
+                                    validate: value =>
+                                        value === password.current || "The passwords do not match"
+                                })}
+                            />
 
 
-                        {errors.username && <span id="username-warning">{errors.username.message}</span>}
-                        {errors.email && <span id="username-warning">{errors.email.message}</span>}
-                        {errors.password && <span id="password-warning">{errors.password.message}</span>}
-                        {errors.confirmpassword && <span id="password-warning">{errors.confirmpassword.message}</span>}
+                            {errors.username && <span id="username-warning">{errors.username.message}</span>}
+                            {errors.email && <span id="username-warning">{errors.email.message}</span>}
+                            {errors.password && <span id="password-warning">{errors.password.message}</span>}
+                            {errors.confirmpassword &&
+                            <span id="password-warning">{errors.confirmpassword.message}</span>}
 
-                        <Button
-                            type="submit"
-                            text="Sign up!"
-                        />
-                    </form>
-                </div>
-            </main>
-            <Footer
-                fillpage="lower-footer"
-            />
+                            <Button
+                                type="submit"
+                                text="Sign up!"
+                            />
+                        </form>
+                    </div>
+                </main>
+                <Footer
+                    fillpage="lower-footer"
+                />
+            </div>
         </>
     )
-    console.log(errors.comfirm.message)
 }
 
 export default SignUp;

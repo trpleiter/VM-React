@@ -1,9 +1,10 @@
 .page-container {
     background-image: url("../assets/ingredients-background.jpg");
     color: var(--voediemealgrey);
+
 }
 
-contact-main {
+.contact-main {
     background-color: white;
     border-radius: 8px;
     border: 1px solid #dadce0;

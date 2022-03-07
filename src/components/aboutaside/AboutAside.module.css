@@ -1,5 +1,6 @@
 .asidebackground {
     display: inline-block;
+    height: 45vh;
     width: 50%;
     background-image: url('../../assets/ingredients-background.jpg');
     background-repeat: no-repeat;

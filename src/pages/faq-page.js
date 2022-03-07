@@ -9,7 +9,7 @@ function FAQpage() {
     return (
         <>
             <NavigationBar/>
-            <div className="page-container">
+            <div className="page-container-faq">
             <div className="outer-container">
                 <div className="flexbackground"></div>
                 <main className="faq-main">
@@ -42,10 +42,11 @@ function FAQpage() {
                     />
                 </main>
             </div>
+            </div>
             <Footer
                 faq="active"
             />
-            </div>
+
         </>
     )
 }

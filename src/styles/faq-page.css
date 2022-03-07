@@ -1,4 +1,4 @@
-.page-container {
+.page-container-faq {
     background-image: url("../assets/ingredients-background.jpg");
     color: hsl(220, 3%, 45%)
 }
@@ -11,6 +11,7 @@
 .flexbackground {
     display: flex;
     width: 50%;
+    height: 90vh;
     background-image: url('../assets/faqpic.jpg');
     background-repeat: no-repeat;
     background-size: cover;

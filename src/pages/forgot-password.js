@@ -16,6 +16,7 @@ function ForgotPassword() {
         <>
             <NavigationBar
             />
+            <div className="page-container">
             <main className="password-main">
                 <div className="forgot-password-container">
                     <InteractionIntro>
@@ -49,6 +50,7 @@ function ForgotPassword() {
             <Footer
                 fillpage="lower-footer"
             />
+            </div>
         </>
     )
 }

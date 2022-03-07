@@ -25,7 +25,6 @@ function Loginpage() {
             <main className="account-main">
                 <div className="login-container">
                     <InteractionIntro intro="Login">
-
                         <p>Use your VoedieMeals-account</p>
                     </InteractionIntro>
                     <form onSubmit={handleSubmit(onFormSubmit)}>

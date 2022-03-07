@@ -11,6 +11,7 @@ function PasswordChangeNotification() {
         <>
             <NavigationBar
             />
+            <div className="page-container">
             <main className="email-main">
                 <div className="email-notification-container">
                     <InteractionIntro>
@@ -29,6 +30,7 @@ function PasswordChangeNotification() {
             <Footer
                 fillpage="lower-footer"
             />
+            </div>
         </>
     )
 }
