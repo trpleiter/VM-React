@@ -9,6 +9,7 @@ import loginimg from "../assets/login.svg";
 import menu from "../assets/menu.svg";
 import Footer from "../components/footer/Footer";
 import React from "react";
+import { Link } from 'react-router-dom';
 
 function Homepage() {
     return (
@@ -16,15 +17,15 @@ function Homepage() {
             <nav>
                 <div className="nav-container">
                     <ul>
-                        <li><a href="voedie-stomach.html">Voedie stomach</a></li>
-                        <li><a href="voedie-talk.html">Voedie talk</a></li>
-                        <li><a href="login.html"> <img src={loginimg} alt="login" id="login"/> Login</a></li>
+                        <li><Link to= "/voedie-stomach">Voedie stomach</Link></li>
+                        <li><Link to="/voedie-talk">Voedie talk</Link></li>
+                        <li><Link to="/login"> <img src={loginimg} alt="login" id="login"/> Login</Link></li>
                     </ul>
                     <img src={menu} alt="Menu" id="navigatie-dropdown"/>
                 </div>
-                <div className="logo-container"><a href="index.html"><img src={voediemeals}
+                <div className="logo-container"><Link to="/"><img src={voediemeals}
                                                                           alt="Voedie"
-                                                                          id="logo-homepage"/></a>
+                                                                          id="logo-homepage"/></Link>
                 </div>
                 <div className="nav-bottom"><img src={navbottom} alt="nav-bottom" id="img-nav-bottom"/>
                 </div>
@@ -86,10 +87,10 @@ function Homepage() {
                     are made!
                 </aside>
 
-                <iframe class="grid-item" id="ytvid" src="https://www.youtube.com/embed/Ge56ZwJat5A"
+                <iframe className="grid-item" id="ytvid" src="https://www.youtube.com/embed/Ge56ZwJat5A"
                         title="YouTube video player"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+                        ></iframe>
             </main>
             <Footer />
         </>

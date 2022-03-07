@@ -9,9 +9,10 @@ function FAQpage() {
     return (
         <>
             <NavigationBar/>
+            <div className="page-container">
             <div className="outer-container">
                 <div className="flexbackground"></div>
-                <main>
+                <main className="faq-main">
                     <QuestionContainer
                         question="What are the costs of making use of VoedieMeals?"
                     />
@@ -44,6 +45,7 @@ function FAQpage() {
             <Footer
                 faq="active"
             />
+            </div>
         </>
     )
 }

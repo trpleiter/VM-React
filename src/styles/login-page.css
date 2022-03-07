@@ -1,9 +1,9 @@
-body {
+.page-container {
     background-image: url("../assets/ingredients-background.jpg");
     color: hsl(220, 3%, 45%)
 }
 
-main {
+.account-main {
     background-color: white;
     border-radius: 8px;
     border: 1px solid #dadce0;

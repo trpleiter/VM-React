@@ -1,4 +1,4 @@
-body {
+.page-container {
     background-image: url("../assets/ingredients-background.jpg");
     color: hsl(220, 3%, 45%)
 }
@@ -16,7 +16,7 @@ body {
     background-size: cover;
 }
 
-main {
+.faq-main {
     margin-top: 32px;
     margin-right: 32px;
     width: 50%;

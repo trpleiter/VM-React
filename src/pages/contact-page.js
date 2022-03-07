@@ -16,7 +16,8 @@ function Contactpage() {
     return (
         <>
             <NavigationBar/>
-            <main>
+            <div className="page-container">
+            <main className="contact-main">
                 <form onSubmit={handleSubmit(onFormSubmit)}>
                 <div className="contact-container">
                     <InteractionIntro
@@ -75,6 +76,7 @@ function Contactpage() {
                 contact="active"
                 fillpage="lower-footer"
             />
+            </div>
         </>
     )
 }

@@ -21,7 +21,7 @@ function SignUp() {
             <NavigationBar
                 login="active"
             />
-            <main>
+            <main className="account-main">
                 <div className="login-container">
                     <InteractionIntro intro="Create your VoedieMeals-account"
                     />

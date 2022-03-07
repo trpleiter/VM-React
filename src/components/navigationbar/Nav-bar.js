@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import loginimg from "../../assets/login.svg";
 import menu from "../../assets/menu.svg";
 import styles from '../navigationbar/Nav-bar.module.css'
@@ -7,35 +8,35 @@ import voedielogo from '../../assets/voedie-logo.jpg';
 function NavigationBar({voediestomach, voedietalk, login}) {
     return (
         <nav className={styles.navContainer}>
-            <a href="index.html">
+            <Link to="/">
                 <img
                     src={voedielogo}
                     alt="Voedie"
                     className={styles.logo}
                 />
-            </a>
+            </Link>
             <ul className={styles.navItems}>
                 <li>
-                    <a className={`${styles.navItem} ${voediestomach}`}
-                       href="voedie-stomach.html">
+                    <Link className={`${styles.navItem} ${voediestomach}`}
+                       to="/voedie-stomach">
                         Voedie stomach
-                    </a>
+                    </Link>
                 </li>
                 <li>
-                    <a className={`${styles.navItem} ${voedietalk}`}
-                       href="voedie-talk.html">
+                    <Link className={`${styles.navItem} ${voedietalk}`}
+                       to="/voedie-talk">
                         Voedie talk
-                    </a>
+                    </Link>
                 </li>
                 <li>
-                    <a className={`${styles.navItem} ${login}`}
-                       href="login.html">
+                    <Link className={`${styles.navItem} ${login}`}
+                       to="/login">
                         <img src={loginimg}
                              alt="login"
                              className={styles.login}
                         />
                         Login
-                    </a>
+                    </Link>
                 </li>
             </ul>
             <img

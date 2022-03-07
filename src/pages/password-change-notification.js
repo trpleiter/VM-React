@@ -11,7 +11,7 @@ function PasswordChangeNotification() {
         <>
             <NavigationBar
             />
-            <main>
+            <main className="email-main">
                 <div className="email-notification-container">
                     <InteractionIntro>
                         <h3>Check your mail</h3>

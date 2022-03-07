@@ -1,5 +1,6 @@
 import React from "react";
 import {useForm} from 'react-hook-form';
+import { Link } from 'react-router-dom';
 import '../styles/login-page.css'
 import NavigationBar from "../components/navigationbar/Nav-bar";
 import InteractionIntro from "../components/interactionintro/Interaction-intro";
@@ -20,7 +21,8 @@ function Loginpage() {
             <NavigationBar
                 login="active"
             />
-            <main>
+            <div className="page-container">
+            <main className="account-main">
                 <div className="login-container">
                     <InteractionIntro intro="Login">
 
@@ -65,8 +67,8 @@ function Loginpage() {
 
                         <div className="account-set">
                             <ul>
-                                <a href="forgot-password.html"> Forgot password?</a>
-                                <a href="sign-up.html">Sign up</a>
+                                <Link to="/forgot-password"> Forgot password?</Link>
+                                <Link to="/sign-up">Sign up</Link>
                             </ul>
                         </div>
                         {errors.username && <span id="username-warning">{errors.username.message}</span>}
@@ -81,6 +83,7 @@ function Loginpage() {
             <Footer
                 fillpage="lower-footer"
             />
+            </div>
         </>
     )
 }

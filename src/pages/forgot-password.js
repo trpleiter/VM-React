@@ -16,7 +16,7 @@ function ForgotPassword() {
         <>
             <NavigationBar
             />
-            <main>
+            <main className="password-main">
                 <div className="forgot-password-container">
                     <InteractionIntro>
                         <h3>Reset password</h3>
