@@ -70,8 +70,8 @@ function Loginpage() {
                                 <Link to="/sign-up">Sign up</Link>
                             </ul>
                         </div>
-                        {errors.username && <span id="username-warning">{errors.username.message}</span>}
-                        {errors.password && <span id="password-warning">{errors.password.message}</span>}
+                        {errors.username && <span id="log-warning">{errors.username.message}</span>}
+                        {errors.password && <span id="log-warning">{errors.password.message}</span>}
                         <Button
                             type="submit"
                             text="Login"

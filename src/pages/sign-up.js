@@ -1,5 +1,6 @@
 import React, {useRef} from "react";
 import {useForm} from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import "../styles/login-page.css";
 import NavigationBar from "../components/navigationbar/Nav-bar";
 import InteractionIntro from "../components/interactionintro/Interaction-intro";
@@ -14,6 +15,12 @@ function SignUp() {
 
     function onFormSubmit(data) {
         console.log(data);
+    }
+
+    let navigate = useNavigate();
+
+    function handleClick() {
+        navigate("/welcome");
     }
 
     return (
@@ -93,15 +100,16 @@ function SignUp() {
                             />
 
 
-                            {errors.username && <span id="username-warning">{errors.username.message}</span>}
-                            {errors.email && <span id="username-warning">{errors.email.message}</span>}
-                            {errors.password && <span id="password-warning">{errors.password.message}</span>}
+                            {errors.username && <span id="log-warning">{errors.username.message}</span>}
+                            {errors.email && <span id="log-warning">{errors.email.message}</span>}
+                            {errors.password && <span id="log-warning">{errors.password.message}</span>}
                             {errors.confirmpassword &&
-                            <span id="password-warning">{errors.confirmpassword.message}</span>}
+                            <span id="log-warning">{errors.confirmpassword.message}</span>}
 
                             <Button
                                 type="submit"
                                 text="Sign up!"
+                                onClick={handleClick}
                             />
                         </form>
                     </div>

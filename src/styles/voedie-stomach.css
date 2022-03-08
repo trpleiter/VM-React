@@ -1,7 +1,3 @@
-body {
-    color: var(--voediemealgrey)
-}
-
 .\=section-search {
     background-color: var(--voediemealgrey);
     color: var(--voediemealgreen);
@@ -106,9 +102,15 @@ body {
 }
 
 .searchbar {
-    margin: 20px;
+    padding: 8px;
+    margin: 8px;
     display: flex;
     justify-content: center;
+}
+
+input {
+    padding: 8px;
+    margin: 8px;
 }
 
 #user-food-input {
