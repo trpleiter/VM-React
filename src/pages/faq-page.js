@@ -43,9 +43,7 @@ function FAQpage() {
                 </main>
             </div>
             </div>
-            <Footer
-                faq="active"
-            />
+            <Footer />
 
         </>
     )

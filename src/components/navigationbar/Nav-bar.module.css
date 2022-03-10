@@ -16,25 +16,12 @@
     width: 12px;
 }
 
-.navigatieDropdown {
-    width: 30px;
-    display: block;
-}
-
-.navigatieDropdown:hover {
-    cursor: pointer;
-}
-
 .navItems {
     display: none;
     list-style-type: none;
 }
 
 @media screen and (min-width: 768px) {
-    .navigatieDropdown {
-        display: none;
-    }
-
     .navItems {
         display: flex;
         flex-direction: row;

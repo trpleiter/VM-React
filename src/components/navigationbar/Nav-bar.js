@@ -1,11 +1,13 @@
-import React from "react";
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import {Link, NavLink} from 'react-router-dom';
 import loginimg from "../../assets/login.svg";
-import menu from "../../assets/menu.svg";
 import styles from '../navigationbar/Nav-bar.module.css'
 import voedielogo from '../../assets/voedie-logo.jpg';
+import Burger from "../burger/Burger";
+import BurgerMenu from "../burgermenu/BurgerMenu";
 
-function NavigationBar({voediestomach, voedietalk, login}) {
+function NavigationBar() {
+    const [openBurger, setOpenBurger] = useState(false);
     return (
         <nav className={styles.navContainer}>
             <Link to="/">
@@ -17,33 +19,30 @@ function NavigationBar({voediestomach, voedietalk, login}) {
             </Link>
             <ul className={styles.navItems}>
                 <li>
-                    <Link className={`${styles.navItem} ${voediestomach}`}
-                       to="/voedie-stomach">
+                    <NavLink className={styles.navItem}
+                             to="/voedie-stomach" activeclassname="active">
                         Voedie stomach
-                    </Link>
+                    </NavLink>
                 </li>
                 <li>
-                    <Link className={`${styles.navItem} ${voedietalk}`}
-                       to="/voedie-talk">
+                    <NavLink className={styles.navItem}
+                             to="/voedie-talk" activeclassname="active">
                         Voedie talk
-                    </Link>
+                    </NavLink>
                 </li>
                 <li>
-                    <Link className={`${styles.navItem} ${login}`}
-                       to="/login">
+                    <NavLink className={styles.navItem}
+                             to="/login" activeclassname="active">
                         <img src={loginimg}
                              alt="login"
                              className={styles.login}
                         />
                         Login
-                    </Link>
+                    </NavLink>
                 </li>
             </ul>
-            <img
-                src={menu}
-                alt="Menu"
-                className={styles.navigatieDropdown}
-            />
+                <Burger openBurger={openBurger} setOpenBurger={setOpenBurger} />
+                <BurgerMenu openBurger={openBurger} setOpenBurger={setOpenBurger} />
         </nav>
     );
 }

@@ -77,7 +77,6 @@ function Contactpage() {
             </main>
 
             <Footer
-                contact="active"
                 fillpage="lower-footer"
             />
             </div>

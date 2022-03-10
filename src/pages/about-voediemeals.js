@@ -50,9 +50,7 @@ function AboutVoedieMeals() {
                     </AboutUs>
                 </div>
             </main>
-            <Footer
-            aboutus="active"
-            />
+            <Footer />
         </>
 )
 }

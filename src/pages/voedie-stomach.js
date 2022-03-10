@@ -13,9 +13,7 @@ import RecipeResult from "../components/reciperesult/RecipeResult";
 function VoedieStomach() {
     return (
         <>
-            <NavigationBar
-                voediestomach="active"
-            />
+            <NavigationBar />
 
             <IntroFunctionality
                 title="Voedie stomach, [username]!"

@@ -2,7 +2,7 @@
     background-image: url("../assets/ingredients-background.jpg");
     color: var(--voediemealgrey);
     height: 60vh;
-    padding:150px;
+    padding:100px;
     display: flex;
     justify-content: center;
 }

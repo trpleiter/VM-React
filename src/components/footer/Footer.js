@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from './Footer.module.css'
 
 function Footer ({ aboutus, contact, faq, fillpage }) {
@@ -8,22 +8,22 @@ function Footer ({ aboutus, contact, faq, fillpage }) {
                 <span>© 2022 VoedieMeals</span>
                 <ul className={styles['footerItems']}>
                     <li>
-                        <Link className={`${styles.footerItem} ${aboutus}`}
-                           to="/about-voediemeals">
+                        <NavLink className={styles.footerItem}
+                           to="/about-voediemeals" activeclassname="active">
                             About us
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link className={`${styles.footerItem} ${contact}`}
-                           to="/contact">
+                        <NavLink className={styles.footerItem}
+                           to="/contact"  activeclassname="active">
                             Contact
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link className={`${styles.footerItem} ${faq}`}
-                           to="/faq">
+                        <NavLink className={styles.footerItem}
+                           to="/faq" activeclassname="active">
                             FAQ
-                        </Link>
+                        </NavLink>
                     </li>
                 </ul>
         </footer>

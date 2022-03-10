@@ -18,9 +18,7 @@ function Loginpage() {
 
     return (
         <>
-            <NavigationBar
-                login="active"
-            />
+            <NavigationBar />
             <div className="page-container">
             <main className="account-main">
                 <div className="login-container">

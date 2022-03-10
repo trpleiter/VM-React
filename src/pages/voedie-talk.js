@@ -7,9 +7,7 @@ import Footer from "../components/footer/Footer";
 function VoedieTalk () {
     return (
         <>
-            <NavigationBar
-                voedietalk="active"
-            />
+            <NavigationBar />
             <main>
                 <IntroFunctionality
                     title="Voedie talk, [username]!"

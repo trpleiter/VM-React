@@ -6,12 +6,15 @@ import nowaste from '../assets/no-waste.jpg';
 import voediemeals from '../assets/voedie-logo-homepage.jpg';
 import navbottom from "../assets/nav-bottom.jpg";
 import loginimg from "../assets/login.svg";
-import menu from "../assets/menu.svg";
 import Footer from "../components/footer/Footer";
-import React from "react";
+import React, { useState } from "react";
 import { Link } from 'react-router-dom';
+import Burger from "../components/burger/Burger";
+import BurgerMenu from "../components/burgermenu/BurgerMenu";
 
 function Homepage() {
+    const [openBurger, setOpenBurger] = useState(false);
+
     return (
         <>
             <nav>
@@ -21,7 +24,8 @@ function Homepage() {
                         <li><Link to="/voedie-talk">Voedie talk</Link></li>
                         <li><Link to="/login"> <img src={loginimg} alt="login" id="login"/> Login</Link></li>
                     </ul>
-                    <img src={menu} alt="Menu" id="navigatie-dropdown"/>
+                    <Burger openBurger={openBurger} setOpenBurger={setOpenBurger} />
+                    <BurgerMenu openBurger={openBurger} setOpenBurger={setOpenBurger} />
                 </div>
                 <div className="logo-container"><Link to="/"><img src={voediemeals}
                                                                           alt="Voedie"
