@@ -2,15 +2,20 @@
     background-image: url("../assets/ingredients-background.jpg");
     color: var(--voediemealgrey);
     height: 60vh;
-    padding:200px;
+    padding:150px;
+    display: flex;
+    justify-content: center;
 }
+
 
 .email-main {
     background-color: white;
     border-radius: 8px;
     border: 1px solid #dadce0;
-    display: block;
-    margin: 5% auto 5% auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
     width: 450px;
 }
 

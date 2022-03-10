@@ -5,11 +5,15 @@ import InteractionIntro from "../components/interactionintro/Interaction-intro";
 import Button from "../components/button/Button";
 import Footer from "../components/footer/Footer";
 import {useForm} from "react-hook-form";
+import { useNavigate } from 'react-router-dom';
 
 function ForgotPassword() {
     const {register, handleSubmit, formState: {errors} } = useForm({mode: 'onBlur'});
+    let navigate = useNavigate();
+
     function onFormSubmit(data) {
         console.log(data);
+        navigate('/password-change-notification');
     }
 
     return (

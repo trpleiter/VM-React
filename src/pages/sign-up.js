@@ -13,15 +13,12 @@ function SignUp() {
     const password = useRef({});
     password.current = watch("password", "");
 
-    function onFormSubmit(data) {
-        console.log(data);
-    }
-
     let navigate = useNavigate();
 
-    function handleClick() {
-        navigate("/welcome");
-    }
+    function onFormSubmit(data) {
+        console.log(data);
+            navigate('/welcome');
+        }
 
     return (
         <>
@@ -109,8 +106,8 @@ function SignUp() {
                             <Button
                                 type="submit"
                                 text="Sign up!"
-                                onClick={handleClick}
                             />
+
                         </form>
                     </div>
                 </main>

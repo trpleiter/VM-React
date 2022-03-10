@@ -1,5 +1,6 @@
 import React from "react";
 import {useForm} from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import '../styles/contact-page.css';
 import NavigationBar from "../components/navigationbar/Nav-bar";
 import InteractionIntro from "../components/interactionintro/Interaction-intro";
@@ -9,8 +10,11 @@ import Button from "../components/button/Button";
 
 function Contactpage() {
     const {register, handleSubmit, formState: {errors} } = useForm({mode: 'onBlur'});
+    let navigate = useNavigate();
+
     function onFormSubmit(data) {
         console.log(data);
+        navigate('/contact-notification');
     }
 
     return (
