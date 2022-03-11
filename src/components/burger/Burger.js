@@ -5,17 +5,17 @@ function Burger({openBurger, setOpenBurger}) {
     if (openBurger === true) {
         return (
             <div className={styles.burgerStyle} onClick={() => setOpenBurger(!openBurger)}>
-                <span/>
-                <span/>
-                <span/>
+                <h6> </h6>
+                <h6> </h6>
+                <h6> </h6>
             </div>
         )
     } else {
         return (
             <div className={styles.burgerStyleClosed} onClick={() => setOpenBurger(!openBurger)}>
-                <span/>
-                <span/>
-                <span/>
+                <h6> </h6>
+                <h6> </h6>
+                <h6> </h6>
             </div>
         )
     }

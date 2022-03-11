@@ -13,7 +13,7 @@ nav {
     justify-content: flex-end;
 }
 
-.nav-item {
+.nav-options {
     display: none;
     list-style-type: none;
 }
@@ -38,8 +38,8 @@ nav {
     width: 100%;
 }
 
-header {
-    font-size: 20px;
+h1 {
+    font-size: 30px;
     text-transform: uppercase;
     text-align: center;
     margin-top: 100px;
@@ -50,7 +50,7 @@ header {
     background-image: url("../assets/ingredients-background.jpg");
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 300px 100px auto auto auto 100px 50px auto 50px;
+    grid-template-rows: 300px 110px auto auto auto 100px 70px auto 50px;
     grid-template-areas:
         "head head"
         "aside1 aside1"
@@ -185,7 +185,7 @@ li a:hover {
 }
 
 @media screen and (min-width: 768px) {
-    .nav-container ul {
+    .nav-options {
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
@@ -193,9 +193,9 @@ li a:hover {
         flex-basis: 750px;
     }
 
-    .nav-container ul li a {
+    .nav-item {
         display: block;
-        color: hsl(220, 3%, 45%);
+        color: var(--voediemealgrey);
         text-align: center;
         padding: 40px 40px;
         text-decoration: none;

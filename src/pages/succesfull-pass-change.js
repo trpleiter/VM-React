@@ -14,8 +14,8 @@ function SuccesfullPassChange() {
                 <div className="email-notification-container">
                     <InteractionIntro>
                         <h3>Your password has been changed!</h3>
-                        <span>The new password that you have chosen is succesfully changed. Do not forget it this time!
-                              😉</span>
+                        <p>The new password that you have chosen is succesfully changed. Do not forget it this time!
+                              😉</p>
                     </InteractionIntro>
                 </div>
             </main>

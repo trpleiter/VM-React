@@ -20,7 +20,7 @@ function Contactpage() {
     return (
         <>
             <NavigationBar/>
-            <div className="page-container">
+            <div className="page-container-contact">
             <main className="contact-main">
                 <form onSubmit={handleSubmit(onFormSubmit)}>
                 <div className="contact-container">

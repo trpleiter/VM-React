@@ -1,4 +1,4 @@
-.page-container {
+.page-container-recipe {
     background-image: url("../assets/ingredients-background.jpg");
     color: var(--voediemealgrey);
     height: 60vh;
@@ -8,7 +8,7 @@
 }
 
 
-.email-main {
+.recipe-main {
     background-color: white;
     border-radius: 8px;
     border: 1px solid #dadce0;
@@ -19,7 +19,7 @@
     width: 450px;
 }
 
-.email-notification-container {
+.re-container {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -34,15 +34,11 @@ h3 {
     text-align: center;
 }
 
-.email-notification-container p {
+.re-container-container p {
     font-size: 14px;
     padding: 16px;
     text-align: center;
     margin: 0;
-}
-
-#mail-icon {
-    width: 150px;
 }
 
 .lower-footer {

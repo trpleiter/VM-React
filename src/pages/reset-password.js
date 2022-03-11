@@ -24,7 +24,7 @@ function ResetPassword() {
                     <div className="forgot-password-container">
                         <InteractionIntro>
                             <h3>Create new password</h3>
-                            <span>Please enter the new password which you would like to use</span>
+                            <p>Please enter the new password which you would like to use</p>
                         </InteractionIntro>
                         <form onSubmit={handleSubmit(onFormSubmit)}>
                             <input

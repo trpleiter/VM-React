@@ -25,7 +25,7 @@ function ForgotPassword() {
                 <div className="forgot-password-container">
                     <InteractionIntro>
                         <h3>Reset password</h3>
-                        <span>Enter the email associated with your account and we will send an email with instructions to reset your password</span>
+                        <p>Enter the email associated with your account and we will send an email with instructions to reset your password.</p>
                     </InteractionIntro>
                     <form onSubmit={handleSubmit(onFormSubmit)}>
                     <input

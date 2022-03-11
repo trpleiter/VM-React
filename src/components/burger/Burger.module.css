@@ -15,11 +15,11 @@
     z-index: 10;
 }
 
-div:focus {
+.burgerStyle:focus {
     outline: none;
 }
 
-span {
+h6 {
     color: var(--voediemealgrey);
     width: 2rem;
     height: 0.25rem;
@@ -30,16 +30,16 @@ span {
     transform-origin: 1px;
 }
 
-.burgerStyle span:first-child {
+.burgerStyle h6:first-child {
     transform: rotate(45deg);
 }
 
-.burgerStyle span:nth-child(2) {
+.burgerStyle h6:nth-child(2) {
     opacity: 0;
     transform: translateX(20px);
 }
 
-.burgerStyle span:nth-child(3) {
+.burgerStyle h6:nth-child(3) {
     transform: rotate(-45deg);
 }
 

@@ -11,7 +11,6 @@ import voediemeals from '../assets/voedie-logo-homepage.jpg';
 import navbottom from "../assets/nav-bottom.jpg";
 import loginimg from "../assets/login.svg";
 import Footer from "../components/footer/Footer";
-import styles from "../components/navigationbar/Nav-bar.module.css";
 
 function Homepage() {
     const [openBurger, setOpenBurger] = useState(false);
@@ -20,7 +19,7 @@ function Homepage() {
         <>
             <nav>
                 <div className="nav-container-home">
-                    <ul>
+                    <ul className="nav-options">
                         <li><Link className="nav-item" to= "/voedie-stomach">Voedie stomach</Link></li>
                         <li><Link className="nav-item" to="/voedie-talk">Voedie talk</Link></li>
                         <li><Link className="nav-item" to="/login"> <img src={loginimg} alt="login" id="login"/> Login</Link></li>

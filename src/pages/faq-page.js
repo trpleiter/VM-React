@@ -11,7 +11,6 @@ function FAQpage() {
             <NavigationBar/>
             <div className="page-container-faq">
             <div className="outer-container">
-                <div className="flexbackground"></div>
                 <main className="faq-main">
                     <QuestionContainer
                         question="What are the costs of making use of VoedieMeals?"
@@ -41,6 +40,7 @@ function FAQpage() {
                         answer="At the moment we only provide our services in English."
                     />
                 </main>
+                <div className="flexbackground"></div>
             </div>
             </div>
             <Footer />

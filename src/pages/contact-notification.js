@@ -16,15 +16,15 @@ function ContactNotification() {
                 <div className="email-notification-container">
                     <InteractionIntro>
                         <h3>We will be in touch!</h3>
-                        <span>Give us some time to get back to you. We will send you a confirmation by mail once your
-                              message has been received</span>
+                        <p>Give us some time to get back to you. We will send you a confirmation by mail once your
+                              message has been received</p>
                     </InteractionIntro>
                     <img
                         src={emailicon}
                         id="mail-icon"
                         alt="mail"
                     />
-                    <span>Did not receive the email? Check your spam filter as well.</span>
+                    <p>Did not receive the email? Check your spam filter as well.</p>
 
                 </div>
             </main>

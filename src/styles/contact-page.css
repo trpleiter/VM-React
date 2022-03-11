@@ -1,8 +1,8 @@
-.page-container {
+.page-container-contact {
     background-image: url("../assets/ingredients-background.jpg");
     color: var(--voediemealgrey);
-    height: 60vh;
-    padding:100px;
+    height: 80vh;
+    padding: 50px;
     display: flex;
     justify-content: center;
 }

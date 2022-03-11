@@ -16,14 +16,14 @@ function PasswordChangeNotification() {
                 <div className="email-notification-container">
                     <InteractionIntro>
                         <h3>Check your mail</h3>
-                        <span>We have sent password recovery instructions to your email.</span>
+                        <p>We have sent password recovery instructions to your email.</p>
                     </InteractionIntro>
                     <img
                         src={emailicon}
                         id="mail-icon"
                         alt="mail"
                     />
-                    <span>Did not receive the email? Check your spam filter as well.</span>
+                    <p>Did not receive the email? Check your spam filter as well.</p>
 
                 </div>
             </main>
