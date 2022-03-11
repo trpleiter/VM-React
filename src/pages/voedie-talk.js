@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useState } from 'react';
+import axios from 'axios';
 import "../styles/voedie-talk.css";
 import NavigationBar from "../components/navigationbar/Nav-bar";
 import IntroFunctionality from "../components/introfunctionality/IntroFunctionality";
 import Footer from "../components/footer/Footer";
 
 function VoedieTalk () {
+
+const defaultJokeText = "Are you experiencing an awkward silence during dinner? Get the conversation going!"
+    const [jokeData, setJokeData] = useState(defaultJokeText);
+
+    async function fetchJoke() {
+        try {
+            const result = await axios.get('https://api.spoonacular.com/food/jokes/random?apiKey=f7b5d72783cd4b168e57cc54e500f7ed');
+            console.log (result.data.text);
+            setJokeData(result.data.text);
+        } catch (e) {
+            console.error(e);
+        }
+    }
+
     return (
         <>
             <NavigationBar />
@@ -17,8 +32,14 @@ function VoedieTalk () {
                 />
                 <div className="output-section">
                     <section className="fact-or-joke">
-                        <p id="joke-element">Random joke</p>
-                        <button type="button" id="joke-button">Tell me another joke!</button>
+                        {jokeData &&
+                        <p id="joke-element">{jokeData}</p>
+                        }
+                        <button type="button"
+                                id="joke-button"
+                                onClick={fetchJoke}>
+                            Tell me a joke!
+                        </button>
                     </section>
                     <section className="personal-data">
                         <p>Reveal your history</p>

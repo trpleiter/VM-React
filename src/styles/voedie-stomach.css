@@ -105,6 +105,7 @@
     padding: 8px;
     margin: 8px;
     display: flex;
+    flex-direction: row;
     justify-content: center;
 }
 

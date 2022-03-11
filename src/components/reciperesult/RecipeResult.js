@@ -16,10 +16,6 @@ function RecipeResult ({picture1, name1, picture2, name2, picture3, name3, pictu
                 <h4>{picture3}</h4>
                 <p>{name3}</p>
             </section>
-            <section>
-                <h4>{picture4}</h4>
-                <p>{name4}</p>
-            </section>
         </div>
     )
 }

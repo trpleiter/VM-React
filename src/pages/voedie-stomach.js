@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
 import '../styles/voedie-stomach.css';
 import NavigationBar from "../components/navigationbar/Nav-bar";
 import IntroFunctionality from "../components/introfunctionality/IntroFunctionality";
@@ -9,8 +10,38 @@ import Button from "../components/button/Button";
 import Footer from "../components/footer/Footer";
 import RecipeResult from "../components/reciperesult/RecipeResult";
 
-
 function VoedieStomach() {
+    const [query, setQuery] = useState('');
+    const [leftover, setLeftover] = useState('');
+    const [recipes, setRecipes] = useState('');
+
+    useEffect(() => {
+    async function fetchRecipe() {
+        try {
+            const result = await axios.get(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${leftover}&apiKey=f7b5d72783cd4b168e57cc54e500f7ed`);
+            console.log(result.data);
+            setRecipes(result.data);
+        } catch (e) {
+            console.error(e);
+        }
+    };
+
+        if (leftover) {
+            fetchRecipe();
+        }
+
+    }, [leftover]);
+
+
+
+console.log(recipes);
+
+        function onFormSubmit(event) {
+        event.preventDefault();
+        setLeftover(query);
+        console.log(leftover);
+    }
+
     return (
         <>
             <NavigationBar />
@@ -49,18 +80,20 @@ function VoedieStomach() {
                 </section>
 
             </div>
-            <div className="searchbar">
+            <form className="searchbar" onSubmit={onFormSubmit}>
                 <input
                     type="text"
                     placeholder="Enter the leftover that you want to use for your VoedieMeal here.."
                     id="user-food-input"
                     name="food-input"
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
                 />
                 <Button
-                    type="button"
+                    type="submit"
                     text="Search"
                 />
-            </div>
+            </form>
 
             <h3>Delicious recipes</h3>
             <div className="background-container">
@@ -71,8 +104,7 @@ function VoedieStomach() {
                     name2="Name"
                     picture3="Picture"
                     name3="Name"
-                    picture4="Picture"
-                    name4="Name"
+
                 />
                 <RecipeResult
                     picture1="Picture"
@@ -81,8 +113,6 @@ function VoedieStomach() {
                     name2="Name"
                     picture3="Picture"
                     name3="Name"
-                    picture4="Picture"
-                    name4="Name"
                 />
             </div>
             <Footer/>
