@@ -1,4 +1,8 @@
+import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import '../styles/homepage.css';
+import Burger from "../components/burger/Burger";
+import BurgerMenu from "../components/burgermenu/BurgerMenu";
 import HomepageArticle from '../components/Homepage-article';
 import deliciousfood from '../assets/delicious-food.jpg';
 import cozydinner from '../assets/cozy-dinner.jpg';
@@ -7,10 +11,7 @@ import voediemeals from '../assets/voedie-logo-homepage.jpg';
 import navbottom from "../assets/nav-bottom.jpg";
 import loginimg from "../assets/login.svg";
 import Footer from "../components/footer/Footer";
-import React, { useState } from "react";
-import { Link } from 'react-router-dom';
-import Burger from "../components/burger/Burger";
-import BurgerMenu from "../components/burgermenu/BurgerMenu";
+import styles from "../components/navigationbar/Nav-bar.module.css";
 
 function Homepage() {
     const [openBurger, setOpenBurger] = useState(false);
@@ -18,11 +19,11 @@ function Homepage() {
     return (
         <>
             <nav>
-                <div className="nav-container">
+                <div className="nav-container-home">
                     <ul>
-                        <li><Link to= "/voedie-stomach">Voedie stomach</Link></li>
-                        <li><Link to="/voedie-talk">Voedie talk</Link></li>
-                        <li><Link to="/login"> <img src={loginimg} alt="login" id="login"/> Login</Link></li>
+                        <li><Link className="nav-item" to= "/voedie-stomach">Voedie stomach</Link></li>
+                        <li><Link className="nav-item" to="/voedie-talk">Voedie talk</Link></li>
+                        <li><Link className="nav-item" to="/login"> <img src={loginimg} alt="login" id="login"/> Login</Link></li>
                     </ul>
                     <Burger openBurger={openBurger} setOpenBurger={setOpenBurger} />
                     <BurgerMenu openBurger={openBurger} setOpenBurger={setOpenBurger} />
