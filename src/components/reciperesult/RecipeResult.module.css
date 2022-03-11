@@ -1,12 +1,17 @@
-.recipeResults section{
+.recipeResults {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.recipeResults article {
     background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    flex-basis: 150px;
-    flex-grow: 1;
-    flex-shrink: 1;
-    height: 200px;
+    width: 350px;
+    height: 250px;
     padding: 16px;
     margin: 50px;
     border: 1px solid black;
@@ -14,10 +19,32 @@
     box-shadow: 10px 10px 5px var(--voediemealgreen);
 }
 
+.recipeResults article h4 {
+    margin: 0;
+    padding: 8px;
+}
+
+.recipeResults article img {
+    margin: 0;
+    padding-left: 8px;
+}
+
+.recipeResults article p {
+    margin: 0;
+    padding: 8px;
+}
+
+
 @media screen and (min-width: 768px) {
     .recipeResults {
-        display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+
+    .recipeResults article {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 300px;
     }
 }
