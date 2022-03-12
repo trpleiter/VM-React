@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import '../styles/voedie-stomach.css';
 import NavigationBar from "../components/navigationbar/Nav-bar";
 import IntroFunctionality from "../components/introfunctionality/IntroFunctionality";
@@ -8,8 +9,6 @@ import mouseicon from "../assets/mouse-icon.png";
 import cookicon from "../assets/cook-icon.png";
 import Button from "../components/button/Button";
 import Footer from "../components/footer/Footer";
-import RecipeResult from "../components/reciperesult/RecipeResult";
-import styles from "../components/reciperesult/RecipeResult.module.css";
 
 function VoedieStomach() {
     const [query, setQuery] = useState('');
@@ -43,9 +42,9 @@ function VoedieStomach() {
     useEffect(() => {
         async function fetchRecipe() {
             try {
-                const result = await axios.get(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${leftover}&apiKey=f7b5d72783cd4b168e57cc54e500f7ed`);
-                console.log(result.data);
-                setRecipes(result.data);
+                const resultRecipes = await axios.get(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${leftover}&apiKey=f7b5d72783cd4b168e57cc54e500f7ed`);
+                console.log(resultRecipes.data);
+                setRecipes(resultRecipes.data);
             } catch (e) {
                 console.error(e);
                 return (
@@ -122,14 +121,16 @@ function VoedieStomach() {
 
             <h3>Delicious recipes</h3>
             <div className="background-container">
-                <div className={styles.recipeResults}>
+                <div className="recipeResults">
                     {recipes.map((infoRecipes) => {
                         return(
                             <article className="recipeResult" key={infoRecipes.id}>
+                                <Link to= {`/voedie-stomach/${infoRecipes.id}/${infoRecipes.title}`}>
                                 <h4>{infoRecipes.title}</h4>
                                 <img className="recipeimg" src={infoRecipes.image} alt="recipe"/>
-                                <p>You are only missing {infoRecipes.missedIngredientCount} ingredient(s) to make this recipe!
+                                <p>You are only missing {infoRecipes.missedIngredientCount} other ingredient(s) to make this recipe!
                                 </p>
+                                </Link>
                             </article>
                         )
                     })}

@@ -29,7 +29,7 @@ function App() {
                 </Route>
                 <Route exact path="/voedie-stomach" element={<VoedieStomach/>}>
                 </Route>
-                <Route path="/voediestomach/:id" element={<Recipepage/>}>
+                <Route path="/voedie-stomach/:id/:name" element={<Recipepage/>}>
                 </Route>
                 <Route exact path="/login" element={<LoginPage/>}>
                 </Route>

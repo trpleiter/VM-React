@@ -12,11 +12,10 @@ const defaultJokeText = "Are you experiencing an awkward silence during dinner? 
 
     async function fetchJoke() {
         try {
-            const result = await axios.get('https://api.spoonacular.com/food/jokes/random?apiKey=f7b5d72783cd4b168e57cc54e500f7ed');
-            console.log (result.data.text);
-            setJokeData(result.data.text);
+            const resultJoke = await axios.get('https://api.spoonacular.com/food/jokes/random?apiKey=f7b5d72783cd4b168e57cc54e500f7ed');
+            setJokeData(resultJoke.data.text);
         } catch (e) {
-            console.error(e);
+            console.error(e)
         }
     }
 
