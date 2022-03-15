@@ -1,6 +1,6 @@
 nav {
     background-color: var(--voediemealgreen);
-    color: hsl(220, 3%, 45%);
+    color: var(--voediemealgrey);
 }
 
 #login {

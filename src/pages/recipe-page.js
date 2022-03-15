@@ -7,7 +7,7 @@ import InteractionIntro from "../components/interactionintro/Interaction-intro";
 import Footer from "../components/footer/Footer";
 
 
-function Recipepage({}) {
+function Recipepage() {
 
     const {id, name} = useParams();
     const [recipeDetails, setRecipeDetails] = useState([]);
@@ -24,7 +24,7 @@ function Recipepage({}) {
 
         fetchIngredientById();
 
-    }, []);
+    }, [id]);
 
     const recipeEquipment = recipeDetails.map((equipmentForRecipe) => {
         return equipmentForRecipe.equipment;
@@ -54,7 +54,7 @@ function Recipepage({}) {
                             <ul>
                                 {equipmentNames.map((equipment) => {
                                     return (
-                                        <li>
+                                        <li  key={equipment.id}>
                                             {equipment.name}
                                         </li>
                                     )
@@ -65,7 +65,7 @@ function Recipepage({}) {
                             <ul>
                                 {ingredientNames.map((ingredients) => {
                                     return (
-                                        <li>
+                                        <li  key={ingredients.id}>
                                             {ingredients.name}
                                         </li>
                                     )
@@ -76,7 +76,7 @@ function Recipepage({}) {
                             <ol>
                                 {recipeDetails.map((infoRecipes) => {
                                     return (
-                                        <li>
+                                        <li  key={infoRecipes.step}>
                                             {infoRecipes.step}
                                         </li>
                                     )

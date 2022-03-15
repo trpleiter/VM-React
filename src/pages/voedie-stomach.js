@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import '../styles/voedie-stomach.css';
 import NavigationBar from "../components/navigationbar/Nav-bar";
 import IntroFunctionality from "../components/introfunctionality/IntroFunctionality";
@@ -16,9 +16,19 @@ function VoedieStomach() {
 
     const defaultRecipes = [
         {
-            id: 640803,
-            image: "https://spoonacular.com/recipeImages/640803-312x231.jpg",
-            title: "Crispy Buttermilk Fried Chicken",
+            id: 645418,
+            image: "https://spoonacular.com/recipeImages/645418-312x231.jpg",
+            title: "Green Beans with Pearl Onions and Salmon",
+        },
+        {
+            id: 655589,
+            image: "https://spoonacular.com/recipeImages/655589-312x231.jpg",
+            title: "Penne with Goat Cheese and Basil"
+        },
+        {
+            id: 663933,
+            image: "https://spoonacular.com/recipeImages/663933-312x231.jpg",
+            title: "Tuna mousse dip"
         },
         {
             id: 665734,
@@ -31,10 +41,30 @@ function VoedieStomach() {
             title: "Lemon Pepper Steak",
         },
         {
+            id: 660101,
+            image: "https://spoonacular.com/recipeImages/660101-312x231.jpg",
+            title: "Simple Garlic Pasta",
+        },
+        {
             id: 652965,
             image: "https://spoonacular.com/recipeImages/652965-312x231.jpg",
             title: "Nasi Pudina (Mint Rice)",
         },
+        {
+            id: 644148,
+            image: "https://spoonacular.com/recipeImages/644148-312x231.jpg",
+            title: "Gambas Al Ajo",
+        },
+        {
+            id: 640803,
+            image: "https://spoonacular.com/recipeImages/640803-312x231.jpg",
+            title: "Crispy Buttermilk Fried Chicken",
+        },
+        {
+            id: 633547,
+            image: "https://spoonacular.com/recipeImages/633547-312x231.jpg",
+            title: "Baked Cinnamon Apple Slices",
+        }
     ];
 
     const [recipes, setRecipes] = useState(defaultRecipes);
@@ -47,9 +77,6 @@ function VoedieStomach() {
                 setRecipes(resultRecipes.data);
             } catch (e) {
                 console.error(e);
-                return (
-                    <p>Something went wrong, please try again..</p>
-                )
             }
         };
 
@@ -59,16 +86,18 @@ function VoedieStomach() {
 
     }, [leftover]);
 
-
-        function onFormSubmit(event) {
+    function onFormSubmit(event) {
         event.preventDefault();
         setLeftover(query);
-        console.log(leftover);
+    }
+
+    if (recipes === []) {
+        console.log(true)
     }
 
     return (
         <>
-            <NavigationBar />
+            <NavigationBar/>
 
             <IntroFunctionality
                 title="Voedie stomach, [username]!"
@@ -123,20 +152,25 @@ function VoedieStomach() {
             <div className="background-container">
                 <div className="recipeResults">
                     {recipes.map((infoRecipes) => {
-                        return(
+                        return (
                             <article className="recipeResult" key={infoRecipes.id}>
-                                <Link to= {`/voedie-stomach/${infoRecipes.id}/${infoRecipes.title}`}>
-                                <h4>{infoRecipes.title}</h4>
-                                <img className="recipeimg" src={infoRecipes.image} alt="recipe"/>
-                                <p>You are only missing {infoRecipes.missedIngredientCount} other ingredient(s) to make this recipe!
-                                </p>
+                                <Link to={`/voedie-stomach/${infoRecipes.id}/${infoRecipes.title}`}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="recipe-link">
+                                    <h4>{infoRecipes.title}</h4>
+                                    <img className="recipeimg" src={infoRecipes.image} alt="recipe"/>
+                                    <p>You are only missing {infoRecipes.missedIngredientCount} other ingredients to
+                                        make this recipe!
+                                    </p>
                                 </Link>
                             </article>
                         )
                     })}
                 </div>
+                <p className="potential-error">Do you not see any results? Please check your search input and try again.</p>
+                <Footer/>
             </div>
-            <Footer/>
         </>
     )
 }
