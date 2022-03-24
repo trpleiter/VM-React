@@ -68,17 +68,24 @@ function VoedieStomach() {
     ];
 
     const [recipes, setRecipes] = useState(defaultRecipes);
+    const [error, toggleError] = useState(false);
+    const [loading, toggleLoading] = useState(false);
 
     useEffect(() => {
         async function fetchRecipe() {
+            toggleError(false);
+            toggleLoading(true);
+
             try {
-                const resultRecipes = await axios.get(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${leftover}&apiKey=f7b5d72783cd4b168e57cc54e500f7ed`);
+                const resultRecipes = await axios.get(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${leftover}&apiKey=${process.env.REACT_APP_API_KEY}`);
                 console.log(resultRecipes.data);
                 setRecipes(resultRecipes.data);
             } catch (e) {
                 console.error(e);
+                toggleError(true);
             }
-        };
+            toggleLoading(false);
+        }
 
         if (leftover) {
             fetchRecipe();
@@ -150,6 +157,7 @@ function VoedieStomach() {
 
             <h3>Delicious recipes</h3>
             <div className="background-container">
+                {loading && <div className="loader"></div>}
                 <div className="recipeResults">
                     {recipes.map((infoRecipes) => {
                         return (
@@ -168,7 +176,12 @@ function VoedieStomach() {
                         )
                     })}
                 </div>
-                <p className="potential-error">Do you not see any results? Please check your search input and try again.</p>
+                {error &&
+                <span>Something went wrong, we could not retrieve the data. Sorry for the inconvenience.</span>}
+                {recipes.length === 0 && !error &&
+                <span className="potential-error">
+                Do you not see any results? Please check your search input and try again.
+                </span>}
                 <Footer/>
             </div>
         </>

@@ -76,6 +76,22 @@
     background-color: hsl(220, 3%, 35%);
 }
 
+.joke-loader {
+    border: 10px solid white;
+    border-radius: 50%;
+    border-top: 10px solid var(--voediemealgreen);
+    background-color:var(--voediemealgrey);
+    margin: auto auto 30px auto;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 @media screen and (min-width: 768px) {
     .output-section {
         display: flex;

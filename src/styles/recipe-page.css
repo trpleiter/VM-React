@@ -56,6 +56,37 @@ h3 {
     margin: 0;
 }
 
+.loader {
+    border: 10px solid var(--voediemealgrey);
+    border-radius: 50%;
+    border-top: 10px solid var(--voediemealgreen);
+    background-color:white;
+    margin: auto auto 30px auto;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.potential-error {
+    color: red;
+    font-size: 10px;
+    text-align: center;
+    background-color: white;
+    display: block;
+    width: 450px;
+    margin: auto auto 30px auto;
+    height: 10px;
+    padding: 16px;
+    border: 1px solid black;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px var(--voediemealgreen);
+}
+
 .lower-footer {
     position: fixed;
     left: 0;
