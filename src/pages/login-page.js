@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
 import {useForm} from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
+import { useAuth } from "../contexts/AuthContext";
 import '../styles/login-page.css'
 import NavigationBar from "../components/navigationbar/Nav-bar";
 import InteractionIntro from "../components/interactionintro/Interaction-intro";
@@ -9,11 +10,19 @@ import Footer from "../components/footer/Footer";
 
 
 function Loginpage() {
+    const {register, handleSubmit, formState: { errors, isSubmitting }} = useForm({ mode: 'onChange' });
+    const { login } = useAuth ();
+    const [loginError, setLoginError] = useState('');
 
-    const {register, handleSubmit, formState: { errors }} = useForm({ mode: 'onChange' });
+    let navigate = useNavigate();
 
     function onFormSubmit(data) {
-        console.log(data);
+        login(data.email, data.password)
+            .then((response) => console.log(response))
+            .catch((error) => setLoginError(error.message))
+
+        navigate('/');
+
     }
 
     return (
@@ -26,21 +35,34 @@ function Loginpage() {
                         <p>Use your VoedieMeals-account</p>
                     </InteractionIntro>
                     <form onSubmit={handleSubmit(onFormSubmit)}>
+                        {/*<input*/}
+                        {/*    type="text"*/}
+                        {/*    className="input-field"*/}
+                        {/*    placeholder="Username"*/}
+                        {/*    id="username-field"*/}
+                        {/*    {...register("username", {*/}
+                        {/*        required: "Username can not be empty",*/}
+                        {/*        minLength: {*/}
+                        {/*            value: 3,*/}
+                        {/*            message: "Your username must contain at least 3 characters."}*/}
+                        {/*        ,*/}
+                        {/*        maxLength: {*/}
+                        {/*            value: 12,*/}
+                        {/*            message: "Your username can only contain 12 characters."}*/}
+                        {/*        ,*/}
+                        {/*    })}*/}
+                        {/*/>*/}
                         <input
-                            type="text"
+                            type="email"
                             className="input-field"
-                            placeholder="Username"
-                            id="username-field"
-                            {...register("username", {
-                                required: "Username can not be empty",
-                                minLength: {
-                                    value: 3,
-                                    message: "Your username must contain at least 3 characters."}
-                                ,
-                                maxLength: {
-                                    value: 12,
-                                    message: "Your username can only contain 12 characters."}
-                                ,
+                            placeholder="Enter your e-mailadress.."
+                            id="user-email-field"
+                            {...register("email", {
+                                required: "Your emailadress is required",
+                                pattern: {
+                                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                    message: "Invalid email address",
+                                }
                             })}
                         />
                         <input
@@ -68,9 +90,11 @@ function Loginpage() {
                                 <Link to="/sign-up">Sign up</Link>
                             </ul>
                         </div>
+                        <span id="log-warning">{loginError}</span>
                         {errors.username && <span id="log-warning">{errors.username.message}</span>}
                         {errors.password && <span id="log-warning">{errors.password.message}</span>}
                         <Button
+                            disabled={isSubmitting}
                             type="submit"
                             text="Login"
                         />

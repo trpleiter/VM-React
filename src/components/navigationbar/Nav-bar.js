@@ -5,9 +5,12 @@ import styles from '../navigationbar/Nav-bar.module.css'
 import voedielogo from '../../assets/voedie-logo.jpg';
 import Burger from "../burger/Burger";
 import BurgerMenu from "../burgermenu/BurgerMenu";
+import {useAuth} from "../../contexts/AuthContext";
 
 function NavigationBar() {
     const [openBurger, setOpenBurger] = useState(false);
+    const { currentUser, logout } = useAuth();
+
     return (
         <nav className={styles.navContainer}>
             <Link to="/">
@@ -31,14 +34,28 @@ function NavigationBar() {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink className={styles.navItem}
+                    {!currentUser && <NavLink className={styles.navItem}
                              to="/login" activeclassname="active">
                         <img src={loginimg}
                              alt="login"
                              className={styles.login}
                         />
                         Login
-                    </NavLink>
+                         </NavLink>}
+                    {currentUser && <NavLink className={styles.navItem}
+                             to="/logout"
+                             activeclassname="active"
+                             onClick={async  e => {
+                                 e.preventDefault()
+                                 logout()
+                             }}
+                    >
+                        <img src={loginimg}
+                             alt="logout"
+                             className={styles.login}
+                        />
+                        Logout
+                    </NavLink>}
                 </li>
             </ul>
                 <Burger openBurger={openBurger} setOpenBurger={setOpenBurger} />

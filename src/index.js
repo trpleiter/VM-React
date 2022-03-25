@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom';
 import "./styles/index.css"
 import reportWebVitals from './reportWebVitals';
 import App from "./App";
+import AuthContextProvider from "./contexts/AuthContext";
 
 function Index() {
 
     return (
-       <App />
+        <AuthContextProvider>
+            <App />
+        </AuthContextProvider>
+
     )
 }
 

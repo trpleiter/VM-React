@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import '../styles/password.css';
 import NavigationBar from "../components/navigationbar/Nav-bar";
 import InteractionIntro from "../components/interactionintro/Interaction-intro";
@@ -6,12 +6,18 @@ import Button from "../components/button/Button";
 import Footer from "../components/footer/Footer";
 import {useForm} from "react-hook-form";
 import { useNavigate } from 'react-router-dom';
+import {useAuth} from "../contexts/AuthContext";
 
 function ForgotPassword() {
     const {register, handleSubmit, formState: {errors} } = useForm({mode: 'onBlur'});
+    const { forgotPasswordMail } = useAuth();
+    const [emailError, setEmailError] = useState('');
     let navigate = useNavigate();
 
     function onFormSubmit(data) {
+        forgotPasswordMail(data.email)
+            .then((response) => console.log(response))
+            .catch((error) => setEmailError(error.message))
         console.log(data);
         navigate('/password-change-notification');
     }
@@ -41,7 +47,7 @@ function ForgotPassword() {
                             }
                         })}
                     />
-
+                        <span id="log-warning">{emailError}</span>
                     {errors.email && <span id="email-warning">{errors.email.message}</span>}
 
                     <Button

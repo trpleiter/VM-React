@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link } from 'react-router-dom';
+import React, {useState} from "react";
+import {Link} from 'react-router-dom';
 import '../styles/homepage.css';
 import Burger from "../components/burger/Burger";
 import BurgerMenu from "../components/burgermenu/BurgerMenu";
@@ -11,25 +11,40 @@ import voediemeals from '../assets/voedie-logo-homepage.jpg';
 import navbottom from "../assets/nav-bottom.jpg";
 import loginimg from "../assets/login.svg";
 import Footer from "../components/footer/Footer";
+import {useAuth} from "../contexts/AuthContext";
 
 function Homepage() {
     const [openBurger, setOpenBurger] = useState(false);
+    const {currentUser, logout} = useAuth();
 
     return (
         <>
             <nav>
                 <div className="nav-container-home">
                     <ul className="nav-options">
-                        <li><Link className="nav-item" to= "/voedie-stomach">Voedie stomach</Link></li>
+                        <li><Link className="nav-item" to="/voedie-stomach">Voedie stomach</Link></li>
                         <li><Link className="nav-item" to="/voedie-talk">Voedie talk</Link></li>
-                        <li><Link className="nav-item" to="/login"> <img src={loginimg} alt="login" id="login"/> Login</Link></li>
+                        <li>
+                            {!currentUser &&
+                            <Link className="nav-item" to="/login">
+                            <img src={loginimg} alt="login" id="login"/>
+                            Login
+                            </Link>}
+                            {currentUser &&
+                            <Link className="nav-item" to="/logout" onClick={async e => {
+                                      e.preventDefault()
+                                      logout()}}>
+                                <img src={loginimg} alt="logout" id="login"/>
+                                Logout
+                            </Link>}
+                        </li>
                     </ul>
-                    <Burger openBurger={openBurger} setOpenBurger={setOpenBurger} />
-                    <BurgerMenu openBurger={openBurger} setOpenBurger={setOpenBurger} />
+                    <Burger openBurger={openBurger} setOpenBurger={setOpenBurger}/>
+                    <BurgerMenu openBurger={openBurger} setOpenBurger={setOpenBurger}/>
                 </div>
                 <div className="logo-container"><Link to="/"><img src={voediemeals}
-                                                                          alt="Voedie"
-                                                                          id="logo-homepage"/></Link>
+                                                                  alt="Voedie"
+                                                                  id="logo-homepage"/></Link>
                 </div>
                 <div className="nav-bottom"><img src={navbottom} alt="nav-bottom" id="img-nav-bottom"/>
                 </div>
@@ -94,9 +109,9 @@ function Homepage() {
                 <iframe className="grid-item" id="ytvid" src="https://www.youtube.com/embed/Ge56ZwJat5A"
                         title="YouTube video player"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        ></iframe>
+                ></iframe>
             </main>
-            <Footer />
+            <Footer/>
         </>
     )
 }

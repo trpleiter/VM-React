@@ -1,6 +1,7 @@
-import React, {useRef} from "react";
+import React, {useRef, useState} from "react";
 import {useForm} from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
+import {useAuth} from "../contexts/AuthContext";
 import "../styles/login-page.css";
 import NavigationBar from "../components/navigationbar/Nav-bar";
 import InteractionIntro from "../components/interactionintro/Interaction-intro";
@@ -9,16 +10,20 @@ import Footer from "../components/footer/Footer";
 
 
 function SignUp() {
-    const {register, handleSubmit, formState: {errors}, watch} = useForm({mode: 'onBlur'});
+    const {register, handleSubmit, formState: {errors, isSubmitting}, watch} = useForm({mode: 'onBlur'});
     const password = useRef({});
     password.current = watch("password", "");
+    const [signUpError, setSignUpError] = useState('');
+    const {signup} = useAuth();
 
     let navigate = useNavigate();
 
     function onFormSubmit(data) {
-        console.log(data);
-            navigate('/welcome');
-        }
+        signup(data.email, data.password)
+            .then((response) => console.log(response))
+            .catch((error) => setSignUpError(error.message))
+        navigate('/welcome');
+    }
 
     return (
         <>
@@ -31,25 +36,25 @@ function SignUp() {
                         <InteractionIntro intro="Create your VoedieMeals-account"
                         />
                         <form onSubmit={handleSubmit(onFormSubmit)}>
-                            <input
-                                type="text"
-                                className="input-field"
-                                placeholder="Enter an username.."
-                                id="username-field"
-                                {...register("username", {
-                                    required: "Username is required",
-                                    minLength: {
-                                        value: 3,
-                                        message: "Your username must contain at least 3 characters."
-                                    }
-                                    ,
-                                    maxLength: {
-                                        value: 12,
-                                        message: "Your username can only contain 12 characters."
-                                    }
-                                    ,
-                                })}
-                            />
+                            {/*<input*/}
+                            {/*    type="text"*/}
+                            {/*    className="input-field"*/}
+                            {/*    placeholder="Enter an username.."*/}
+                            {/*    id="username-field"*/}
+                            {/*    {...register("username", {*/}
+                            {/*        required: "Username is required",*/}
+                            {/*        minLength: {*/}
+                            {/*            value: 3,*/}
+                            {/*            message: "Your username must contain at least 3 characters."*/}
+                            {/*        }*/}
+                            {/*        ,*/}
+                            {/*        maxLength: {*/}
+                            {/*            value: 12,*/}
+                            {/*            message: "Your username can only contain 12 characters."*/}
+                            {/*        }*/}
+                            {/*        ,*/}
+                            {/*    })}*/}
+                            {/*/>*/}
 
                             <input
                                 type="email"
@@ -96,7 +101,7 @@ function SignUp() {
                                 })}
                             />
 
-
+                            <span id="log-warning">{signUpError}</span>
                             {errors.username && <span id="log-warning">{errors.username.message}</span>}
                             {errors.email && <span id="log-warning">{errors.email.message}</span>}
                             {errors.password && <span id="log-warning">{errors.password.message}</span>}
@@ -104,6 +109,7 @@ function SignUp() {
                             <span id="log-warning">{errors.confirmpassword.message}</span>}
 
                             <Button
+                                disabled={isSubmitting}
                                 type="submit"
                                 text="Sign up!"
                             />

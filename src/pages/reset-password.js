@@ -1,18 +1,39 @@
-import React, {useRef} from "react";
+import React, {useRef, useState} from "react";
 import {useForm} from 'react-hook-form';
 import '../styles/password.css';
 import NavigationBar from "../components/navigationbar/Nav-bar";
 import InteractionIntro from "../components/interactionintro/Interaction-intro";
 import Button from "../components/button/Button";
 import Footer from "../components/footer/Footer";
+import {useAuth} from "../contexts/AuthContext";
+import {useLocation, useNavigate} from "react-router-dom";
+
+function useQuery () {
+    const location = useLocation();
+    return new URLSearchParams(location.search);
+}
 
 function ResetPassword() {
     const {register, handleSubmit, formState: {errors}, watch} = useForm({mode: 'onBlur'});
     const password = useRef({});
     password.current = watch("password", "");
+    const {resetPassword} = useAuth()
+    const [passwordError, setPasswordError] = useState('')
+
+    let navigate = useNavigate();
+
+    //TODO werkend maken customized pass reset https://www.youtube.com/watch?v=MsDjbWUn3IE
+    //TODO logout pagina maken
+
+    const query = useQuery();
+    console.log(query.get('oobCode'))
 
     function onFormSubmit(data) {
-        console.log(data);
+        resetPassword(query.get('oobCode'), data.password)
+            .then((response) => console.log(response))
+            .catch((error) => setPasswordError(error.message));
+
+        navigate('/succesfull-password-change');
     }
 
     return (
@@ -57,7 +78,7 @@ function ResetPassword() {
                                         value === password.current || "The passwords do not match"
                                 })}
                             />
-
+                            <span id="log-warning">{passwordError}</span>
                             {errors.password && <span id="password-warning">{errors.password.message}</span>}
                             {errors.confirmpassword &&
                             <span id="password-warning">{errors.confirmpassword.message}</span>}
