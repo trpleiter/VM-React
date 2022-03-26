@@ -10,6 +10,7 @@ import Homepage from "./pages/homepage";
 import VoedieTalk from "./pages/voedie-talk";
 import VoedieStomach from "./pages/voedie-stomach";
 import LoginPage from "./pages/login-page";
+import LogoutPage from "./pages/logout-page";
 import Contactpage from "./pages/contact-page";
 import AboutVoedieMeals from "./pages/about-voediemeals";
 import FAQpage from "./pages/faq-page";
@@ -49,6 +50,8 @@ function App() {
                     <Route path="/voedie-stomach/:id/:name" element={<Recipepage/>}>
                     </Route>
                     <Route exact path="/login" element={<LoginPage/>}>
+                    </Route>
+                    <Route exact path="/logout" element={<LogoutPage/>}>
                     </Route>
                     <Route exact path="/sign-up" element={<SignUp/>}>
                     </Route>

@@ -23,7 +23,7 @@ function ResetPassword() {
     let navigate = useNavigate();
 
     //TODO werkend maken customized pass reset https://www.youtube.com/watch?v=MsDjbWUn3IE
-    //TODO logout pagina maken
+    //TODO zorgen dat genavigeerd wordt naar logout pagina
 
     const query = useQuery();
     console.log(query.get('oobCode'))

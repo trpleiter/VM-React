@@ -1,8 +1,13 @@
 import React from "react";
 import styles from "../burgermenu/BurgerMenu.module.css";
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
+import loginimg from "../../assets/login.svg";
+import {useAuth} from "../../contexts/AuthContext";
+
 
 function BurgerMenu({openBurger}) {
+    const { currentUser, logout } = useAuth();
+
     if (openBurger === true) {
         return (
             <>
@@ -21,10 +26,46 @@ function BurgerMenu({openBurger}) {
                             </Link>
                         </li>
                         <li>
-                            <Link className={styles.navBurgerItem}
+
+                            {/*<li>*/}
+                            {/*    {!currentUser && <NavLink className={styles.navItem}*/}
+                            {/*                              to="/login" activeclassname="active">*/}
+                            {/*        <img src={loginimg}*/}
+                            {/*             alt="login"*/}
+                            {/*             className={styles.login}*/}
+                            {/*        />*/}
+                            {/*        Login*/}
+                            {/*    </NavLink>}*/}
+                            {/*    {currentUser && <NavLink className={styles.navItem}*/}
+                            {/*                             to="/logout"*/}
+                            {/*                             activeclassname="active"*/}
+                            {/*                             onClick={async  e => {*/}
+                            {/*                                 e.preventDefault()*/}
+                            {/*                                 logout()*/}
+                            {/*                             }}*/}
+                            {/*    >*/}
+                            {/*        <img src={loginimg}*/}
+                            {/*             alt="logout"*/}
+                            {/*             className={styles.login}*/}
+                            {/*        />*/}
+                            {/*        Logout*/}
+                            {/*    </NavLink>}*/}
+                            {/*</li>*/}
+
+
+                            {!currentUser && <Link className={styles.navBurgerItem}
                                   to="/login">
                                 Login
-                            </Link>
+                            </Link>}
+                            {currentUser &&
+                            <Link className={styles.navBurgerItem} to="/logout"
+                                  onClick={async  e => {
+                                      e.preventDefault()
+                                      logout()
+                                  }}
+                            >
+                            Logout
+                        </Link>}
                         </li>
                     </ul>
                 </div>
