@@ -22,8 +22,6 @@ function ResetPassword() {
 
     let navigate = useNavigate();
 
-    //TODO zorgen dat genavigeerd wordt naar logout pagina
-
     const query = useQuery();
     console.log(query.get('oobCode'))
 

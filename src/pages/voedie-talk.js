@@ -1,17 +1,21 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import "../styles/voedie-talk.css";
 import NavigationBar from "../components/navigationbar/Nav-bar";
 import IntroFunctionality from "../components/introfunctionality/IntroFunctionality";
 import Footer from "../components/footer/Footer";
 import {useAuth} from "../contexts/AuthContext";
+import { db } from '../firebase';
+import  { collection, getDocs } from "firebase/firestore";
 
 function VoedieTalk() {
     const defaultJokeText = "Are you experiencing an awkward silence during dinner? Get the conversation going!"
     const [jokeData, setJokeData] = useState(defaultJokeText);
     const [error, toggleError] = useState(false);
     const [loading, toggleLoading] = useState(false);
-    const { currentUser } = useAuth()
+    const [leftovers, setLeftovers] = useState([])
+    const { currentUser } = useAuth();
+    const leftoverCollectionRef = collection (db, currentUser.uid);
 
     async function fetchJoke() {
         toggleError(false);
@@ -27,11 +31,20 @@ function VoedieTalk() {
         toggleLoading(false);
     }
 
+        async function fetchLeftovers() {
+            try {
+                const leftoverData = await getDocs(leftoverCollectionRef);
+                setLeftovers(leftoverData.docs.map((doc) =>({...doc.data(), id:doc.id})));
+                console.log(leftovers);
+            } catch (e) {
+                console.error(e)
+            }
+        }
+
     return (
         <>
             <NavigationBar/>
             <main>
-                <p>{JSON.stringify(currentUser,null, 2)}</p>
                 <IntroFunctionality
                     title="Voedie talk!"
                     intro="We provide you with funny jokes so that you can get the conversation going again during dinner.
@@ -54,7 +67,11 @@ function VoedieTalk() {
                     </section>
                     <section className="personal-data">
                         <p>Reveal your history</p>
-                        <button type="button">Show my history</button>
+                        {leftovers.map((leftover) => {
+                            return <div key={leftover.id}>{leftover.leftover}</div>
+                        })}
+                        <button type="button" onClick={fetchLeftovers} >
+                            Show my history</button>
                     </section>
                 </div>
             </main>

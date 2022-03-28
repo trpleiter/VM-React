@@ -5,6 +5,7 @@
     justify-content: center;
     background: var(--voediemealgreen);
     border-style: double;
+    border-bottom-left-radius: 100%;
     height: 100vh;
     width: 50%;
     text-align: left;

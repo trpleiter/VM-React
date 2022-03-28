@@ -9,10 +9,15 @@ import mouseicon from "../assets/mouse-icon.png";
 import cookicon from "../assets/cook-icon.png";
 import Button from "../components/button/Button";
 import Footer from "../components/footer/Footer";
+import { doc, setDoc, addDoc, collection } from "firebase/firestore";
+import {db} from "../firebase";
+import {useAuth} from "../contexts/AuthContext";
 
 function VoedieStomach() {
     const [query, setQuery] = useState('');
     const [leftover, setLeftover] = useState('');
+    const { currentUser } = useAuth();
+    const leftoverCollectionRef = doc (db, currentUser.uid, 'leftovers');
 
     const defaultRecipes = [
         {
@@ -71,6 +76,8 @@ function VoedieStomach() {
     const [error, toggleError] = useState(false);
     const [loading, toggleLoading] = useState(false);
 
+    //TODO https://www.youtube.com/watch?v=jCY6DH8F4oc&t=831s from 16:50
+
     useEffect(() => {
         async function fetchRecipe() {
             toggleError(false);
@@ -93,9 +100,24 @@ function VoedieStomach() {
 
     }, [leftover]);
 
+    async function trackLeftovers() {
+        try {
+            await setDoc(doc(db, currentUser.uid, 'leftovers'),
+                {leftover: query.toUpperCase()});
+
+            await addDoc(collection(db, currentUser.uid), {
+                leftover: query.toUpperCase()
+            });
+
+        } catch (e) {
+            console.error(e)
+        }
+    }
+
     function onFormSubmit(event) {
         event.preventDefault();
         setLeftover(query);
+        trackLeftovers();
     }
 
     if (recipes === []) {
@@ -107,7 +129,7 @@ function VoedieStomach() {
             <NavigationBar/>
 
             <IntroFunctionality
-                title="Voedie stomach, [username]!"
+                title="Voedie stomach!"
                 intro="Prepare your VoedieMeal via the following steps:"
             />
 
