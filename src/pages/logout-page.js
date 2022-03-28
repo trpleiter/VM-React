@@ -10,6 +10,7 @@ function LogoutPage() {
         <>
             <NavigationBar
             />
+            <div className="page-container">
             <main className="email-main">
                 <div className="email-notification-container">
                     <InteractionIntro>
@@ -22,6 +23,7 @@ function LogoutPage() {
             <Footer
                 fillpage="lower-footer"
             />
+            </div>
         </>
     )
 }

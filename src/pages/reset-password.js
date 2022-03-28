@@ -22,7 +22,6 @@ function ResetPassword() {
 
     let navigate = useNavigate();
 
-    //TODO werkend maken customized pass reset https://www.youtube.com/watch?v=MsDjbWUn3IE
     //TODO zorgen dat genavigeerd wordt naar logout pagina
 
     const query = useQuery();
@@ -30,10 +29,11 @@ function ResetPassword() {
 
     function onFormSubmit(data) {
         resetPassword(query.get('oobCode'), data.password)
-            .then((response) => console.log(response))
+            .then((response) => {
+                console.log(response)
+                navigate('/succesfull-password-change')
+            })
             .catch((error) => setPasswordError(error.message));
-
-        navigate('/succesfull-password-change');
     }
 
     return (

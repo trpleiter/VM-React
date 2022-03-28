@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import '../styles/homepage.css';
 import Burger from "../components/burger/Burger";
 import BurgerMenu from "../components/burgermenu/BurgerMenu";
@@ -15,6 +15,7 @@ import {useAuth} from "../contexts/AuthContext";
 
 function Homepage() {
     const [openBurger, setOpenBurger] = useState(false);
+    let navigate = useNavigate();
     const {currentUser, logout} = useAuth();
 
     return (
@@ -33,7 +34,9 @@ function Homepage() {
                             {currentUser &&
                             <Link className="nav-item" to="/logout" onClick={async e => {
                                       e.preventDefault()
-                                      logout()}}>
+                                      logout()
+                                navigate('/logout')
+                            }}>
                                 <img src={loginimg} alt="logout" id="login"/>
                                 Logout
                             </Link>}

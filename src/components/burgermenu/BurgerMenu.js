@@ -1,11 +1,12 @@
 import React from "react";
 import styles from "../burgermenu/BurgerMenu.module.css";
-import {Link, NavLink} from "react-router-dom";
+import {Link, NavLink, useNavigate} from "react-router-dom";
 import loginimg from "../../assets/login.svg";
 import {useAuth} from "../../contexts/AuthContext";
 
 
 function BurgerMenu({openBurger}) {
+    let navigate = useNavigate();
     const { currentUser, logout } = useAuth();
 
     if (openBurger === true) {
@@ -62,6 +63,7 @@ function BurgerMenu({openBurger}) {
                                   onClick={async  e => {
                                       e.preventDefault()
                                       logout()
+                                      navigate('/logout')
                                   }}
                             >
                             Logout

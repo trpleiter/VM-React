@@ -16,10 +16,13 @@ function ForgotPassword() {
 
     function onFormSubmit(data) {
         forgotPasswordMail(data.email)
-            .then((response) => console.log(response))
+            .then((response) => {
+                console.log(response)
+                navigate('/password-change-notification')
+            })
             .catch((error) => setEmailError(error.message))
         console.log(data);
-        navigate('/password-change-notification');
+
     }
 
     return (

@@ -20,9 +20,11 @@ function SignUp() {
 
     function onFormSubmit(data) {
         signup(data.email, data.password)
-            .then((response) => console.log(response))
+            .then((response) => {
+                console.log(response)
+                navigate('/welcome')
+            })
             .catch((error) => setSignUpError(error.message))
-        navigate('/welcome');
     }
 
     return (

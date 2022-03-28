@@ -48,7 +48,7 @@ function AuthContextProvider ({ children })
    }
 
    function resetPassword(oobCode, newPassword){
-        confirmPasswordReset(auth, oobCode, newPassword)
+       return confirmPasswordReset(auth, oobCode, newPassword)
    }
 
    const value = {
