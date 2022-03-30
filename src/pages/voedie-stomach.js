@@ -76,8 +76,6 @@ function VoedieStomach() {
     const [error, toggleError] = useState(false);
     const [loading, toggleLoading] = useState(false);
 
-    //TODO https://www.youtube.com/watch?v=jCY6DH8F4oc&t=831s from 16:50
-
     useEffect(() => {
         async function fetchRecipe() {
             toggleError(false);
