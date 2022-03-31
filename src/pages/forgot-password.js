@@ -1,11 +1,11 @@
 import React, {useState} from "react";
-import '../styles/password.css';
+import "../styles/password.css";
 import NavigationBar from "../components/navigationbar/Nav-bar";
 import InteractionIntro from "../components/interactionintro/Interaction-intro";
 import Button from "../components/button/Button";
 import Footer from "../components/footer/Footer";
 import {useForm} from "react-hook-form";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import {useAuth} from "../contexts/AuthContext";
 
 function ForgotPassword() {

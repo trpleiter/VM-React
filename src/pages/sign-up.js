@@ -1,6 +1,6 @@
 import React, {useRef, useState} from "react";
-import {useForm} from 'react-hook-form';
-import {useNavigate} from 'react-router-dom';
+import {useForm} from "react-hook-form";
+import {useNavigate} from "react-router-dom";
 import {useAuth} from "../contexts/AuthContext";
 import "../styles/login-page.css";
 import NavigationBar from "../components/navigationbar/Nav-bar";
@@ -20,8 +20,7 @@ function SignUp() {
 
     function onFormSubmit(data) {
         signup(data.email, data.password)
-            .then((response) => {
-                console.log(response)
+            .then(() => {
                 navigate('/welcome')
             })
             .catch((error) => setSignUpError(error.message))

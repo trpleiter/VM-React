@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import axios from "axios";
 import "../styles/voedie-talk.css";
 import NavigationBar from "../components/navigationbar/Nav-bar";
 import IntroFunctionality from "../components/introfunctionality/IntroFunctionality";
 import Footer from "../components/footer/Footer";
 import {useAuth} from "../contexts/AuthContext";
-import {db} from '../firebase';
+import {db} from "../firebase";
 import {collection, getDocs} from "firebase/firestore";
 
 function VoedieTalk() {
@@ -37,7 +37,6 @@ function VoedieTalk() {
         try {
             const leftoverData = await getDocs(leftoverCollectionRef);
             setLeftovers(leftoverData.docs.map((doc) => ({...doc.data(), id: doc.id})));
-            console.log(leftovers);
         } catch (e) {
             console.error(e)
             toggleError(true);

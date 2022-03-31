@@ -1,8 +1,8 @@
 import React from "react";
-import '../styles/email-notification.css';
+import "../styles/email-notification.css";
 import NavigationBar from "../components/navigationbar/Nav-bar";
 import InteractionIntro from "../components/interactionintro/Interaction-intro";
-import emailicon from '../assets/email-icon.png';
+import emailicon from "../assets/email-icon.png";
 import Footer from "../components/footer/Footer";
 
 

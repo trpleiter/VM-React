@@ -5,7 +5,7 @@ import {
     Navigate,
     useLocation,
     Outlet,
-} from 'react-router-dom';
+} from "react-router-dom";
 import Homepage from "./pages/homepage";
 import VoedieTalk from "./pages/voedie-talk";
 import VoedieStomach from "./pages/voedie-stomach";
@@ -40,7 +40,6 @@ function App() {
                 <Routes>
                     <Route exact path="/" element={<Homepage/>}>
                     </Route>
-
                     <Route element={<RequireAuth />}>
                     <Route exact path="/voedie-talk" element={<VoedieTalk/>}>
                     </Route>

@@ -1,6 +1,6 @@
 import React, {useRef, useState} from "react";
-import {useForm} from 'react-hook-form';
-import '../styles/password.css';
+import {useForm} from "react-hook-form";
+import "../styles/password.css";
 import NavigationBar from "../components/navigationbar/Nav-bar";
 import InteractionIntro from "../components/interactionintro/Interaction-intro";
 import Button from "../components/button/Button";

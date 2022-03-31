@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import {useParams} from "react-router-dom";
-import '../styles/recipe-page.css';
+import "../styles/recipe-page.css";
 import NavigationBar from "../components/navigationbar/Nav-bar";
 import InteractionIntro from "../components/interactionintro/Interaction-intro";
 import Footer from "../components/footer/Footer";

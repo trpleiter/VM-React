@@ -1,18 +1,18 @@
-import React from "react";
-import {useForm} from 'react-hook-form';
-import {useNavigate} from 'react-router-dom';
-import '../styles/contact-page.css';
+import React, {useState} from "react";
+import {useForm} from "react-hook-form";
+import {useNavigate} from "react-router-dom";
+import "../styles/contact-page.css";
 import NavigationBar from "../components/navigationbar/Nav-bar";
 import InteractionIntro from "../components/interactionintro/Interaction-intro";
 import Footer from "../components/footer/Footer";
-
 import Button from "../components/button/Button";
 import {addDoc, collection} from "firebase/firestore";
 import {db} from "../firebase";
 
 
 function Contactpage() {
-    const {register, handleSubmit, formState: {errors}} = useForm({mode: 'onBlur'});
+    const {register, handleSubmit, formState: {errors, isSubmitting}} = useForm({mode: 'onBlur'});
+    const [error, toggleError] = useState(false);
     let navigate = useNavigate();
 
     function onFormSubmit(data) {
@@ -26,8 +26,8 @@ function Contactpage() {
             .then   (() => {
                 navigate('/contact-notification')
             })
-            .catch((e) => console.error(e)
-    )};
+            .catch((error) => toggleError(error.message))
+    };
 
     return (
         <>
@@ -79,8 +79,12 @@ function Contactpage() {
                             ></textarea>
 
                             {errors.email && <span id="email-warning">{errors.email.message}</span>}
-
+                            {error &&
+                            <span className="potential-error">
+    	                        Something went wrong, we could not send your contact form. Sorry for the inconvenience.
+                                </span>}
                             <Button
+                                disabled={isSubmitting}
                                 type="submit"
                                 text="Send"
                             />

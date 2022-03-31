@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
-import axios from 'axios';
-import {Link} from 'react-router-dom';
-import '../styles/voedie-stomach.css';
+import axios from "axios";
+import {Link} from "react-router-dom";
+import "../styles/voedie-stomach.css";
 import NavigationBar from "../components/navigationbar/Nav-bar";
 import IntroFunctionality from "../components/introfunctionality/IntroFunctionality";
 import searchicon from "../assets/search-icon.png";
@@ -9,7 +9,7 @@ import mouseicon from "../assets/mouse-icon.png";
 import cookicon from "../assets/cook-icon.png";
 import Button from "../components/button/Button";
 import Footer from "../components/footer/Footer";
-import { doc, setDoc, addDoc, collection } from "firebase/firestore";
+import { addDoc, collection } from "firebase/firestore";
 import {db} from "../firebase";
 import {useAuth} from "../contexts/AuthContext";
 
@@ -17,7 +17,6 @@ function VoedieStomach() {
     const [query, setQuery] = useState('');
     const [leftover, setLeftover] = useState('');
     const { currentUser } = useAuth();
-    const leftoverCollectionRef = doc (db, currentUser.uid, 'leftovers');
 
     const defaultRecipes = [
         {
@@ -100,8 +99,6 @@ function VoedieStomach() {
 
     async function trackLeftovers() {
         try {
-            await setDoc(doc(db, currentUser.uid, 'leftovers'),
-                {leftover: query.toUpperCase()});
 
             await addDoc(collection(db, currentUser.uid), {
                 leftover: query.toUpperCase()

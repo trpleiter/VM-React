@@ -1,8 +1,8 @@
 import React, {useState} from "react";
-import {useForm} from 'react-hook-form';
-import {Link, useNavigate} from 'react-router-dom';
+import {useForm} from "react-hook-form";
+import {Link, useNavigate} from "react-router-dom";
 import {useAuth} from "../contexts/AuthContext";
-import '../styles/login-page.css'
+import "../styles/login-page.css";
 import NavigationBar from "../components/navigationbar/Nav-bar";
 import InteractionIntro from "../components/interactionintro/Interaction-intro";
 import Button from "../components/button/Button";
