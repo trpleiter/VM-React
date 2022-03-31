@@ -5,8 +5,8 @@ import NavigationBar from "../components/navigationbar/Nav-bar";
 import IntroFunctionality from "../components/introfunctionality/IntroFunctionality";
 import Footer from "../components/footer/Footer";
 import {useAuth} from "../contexts/AuthContext";
-import { db } from '../firebase';
-import  { collection, getDocs } from "firebase/firestore";
+import {db} from '../firebase';
+import {collection, getDocs} from "firebase/firestore";
 
 function VoedieTalk() {
     const defaultJokeText = "Are you experiencing an awkward silence during dinner? Get the conversation going!"
@@ -14,8 +14,8 @@ function VoedieTalk() {
     const [error, toggleError] = useState(false);
     const [loading, toggleLoading] = useState(false);
     const [leftovers, setLeftovers] = useState([])
-    const { currentUser } = useAuth();
-    const leftoverCollectionRef = collection (db, currentUser.uid);
+    const {currentUser} = useAuth();
+    const leftoverCollectionRef = collection(db, currentUser.uid);
 
     async function fetchJoke() {
         toggleError(false);
@@ -31,15 +31,19 @@ function VoedieTalk() {
         toggleLoading(false);
     }
 
-        async function fetchLeftovers() {
-            try {
-                const leftoverData = await getDocs(leftoverCollectionRef);
-                setLeftovers(leftoverData.docs.map((doc) =>({...doc.data(), id:doc.id})));
-                console.log(leftovers);
-            } catch (e) {
-                console.error(e)
-            }
+    async function fetchLeftovers() {
+        toggleError(false);
+        toggleLoading(true);
+        try {
+            const leftoverData = await getDocs(leftoverCollectionRef);
+            setLeftovers(leftoverData.docs.map((doc) => ({...doc.data(), id: doc.id})));
+            console.log(leftovers);
+        } catch (e) {
+            console.error(e)
+            toggleError(true);
         }
+        toggleLoading(false);
+    }
 
     return (
         <>
@@ -66,12 +70,19 @@ function VoedieTalk() {
                         </button>
                     </section>
                     <section className="personal-data">
-                        <p>Reveal your history</p>
-                        {leftovers.map((leftover) => {
-                            return <div key={leftover.id}>{leftover.leftover}</div>
-                        })}
-                        <button type="button" onClick={fetchLeftovers} >
-                            Show my history</button>
+                        <p>With one click on the button you will see your whole search history of leftovers, it might
+                            help you to purchase things differently? </p>
+                        {loading && <div className="history-loader"></div>}
+                        {error &&
+                        <span>Something went wrong, we could not retrieve the data. Sorry for the inconvenience.</span>}
+                        <ol>
+                            {leftovers.map((leftover) => {
+                                return <li key={leftover.id}>{leftover.leftover} </li>
+                            })}
+                        </ol>
+                        <button type="button" onClick={fetchLeftovers}>
+                            Show my history
+                        </button>
                     </section>
                 </div>
             </main>

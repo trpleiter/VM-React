@@ -50,7 +50,7 @@
     flex-basis: 300px;
     flex-grow: 1;
     flex-shrink: 1;
-    height: 400px;
+    height: fit-content;
     padding: 16px;
     margin: 0px 50px 0px 50px;
     border: 1px solid black;
@@ -61,12 +61,14 @@
 .personal-data p {
     font-size: 24px;
     font-weight: normal;
+    margin: 0;
 }
 
 .personal-data button {
     background-color: var(--voediemealgrey);
     color: var(--voediemealgreen);
     padding: 16px;
+    margin-top: 16px;
     width: 200px;
     border: 1px solid black;
     border-radius: 8px;
@@ -81,6 +83,28 @@
     border-radius: 50%;
     border-top: 10px solid var(--voediemealgreen);
     background-color:var(--voediemealgrey);
+    margin: auto auto 30px auto;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+.joke-loader {
+    border: 10px solid white;
+    border-radius: 50%;
+    border-top: 10px solid var(--voediemealgreen);
+    background-color:var(--voediemealgrey);
+    margin: auto auto 30px auto;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+.history-loader {
+    border: 10px solid white;
+    border-radius: 50%;
+    border-top: 10px solid var(--voediemealgrey);
+    background-color:var(--voediemealgreen);
     margin: auto auto 30px auto;
     width: 60px;
     height: 60px;

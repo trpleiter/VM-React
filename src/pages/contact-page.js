@@ -7,18 +7,27 @@ import InteractionIntro from "../components/interactionintro/Interaction-intro";
 import Footer from "../components/footer/Footer";
 
 import Button from "../components/button/Button";
+import {addDoc, collection} from "firebase/firestore";
+import {db} from "../firebase";
 
 
 function Contactpage() {
     const {register, handleSubmit, formState: {errors}} = useForm({mode: 'onBlur'});
     let navigate = useNavigate();
 
-    //TODO Email toevoegen https://www.youtube.com/watch?v=RKj3OjgftXc
-
     function onFormSubmit(data) {
-        console.log(data)
-        navigate('/contact-notification')
-    }
+        addDoc(collection(db, 'contact'),
+            {
+            firstname: data.firstname,
+            surname: data.surname,
+            email: data.email,
+            message: data.message,
+        })
+            .then   (() => {
+                navigate('/contact-notification')
+            })
+            .catch((e) => console.error(e)
+    )};
 
     return (
         <>

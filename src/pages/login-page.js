@@ -35,23 +35,6 @@ function Loginpage() {
                             <p>Use your VoedieMeals-account</p>
                         </InteractionIntro>
                         <form onSubmit={handleSubmit(onFormSubmit)}>
-                            {/*<input*/}
-                            {/*    type="text"*/}
-                            {/*    className="input-field"*/}
-                            {/*    placeholder="Username"*/}
-                            {/*    id="username-field"*/}
-                            {/*    {...register("username", {*/}
-                            {/*        required: "Username can not be empty",*/}
-                            {/*        minLength: {*/}
-                            {/*            value: 3,*/}
-                            {/*            message: "Your username must contain at least 3 characters."}*/}
-                            {/*        ,*/}
-                            {/*        maxLength: {*/}
-                            {/*            value: 12,*/}
-                            {/*            message: "Your username can only contain 12 characters."}*/}
-                            {/*        ,*/}
-                            {/*    })}*/}
-                            {/*/>*/}
                             <input
                                 type="email"
                                 className="input-field"

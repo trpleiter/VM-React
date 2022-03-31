@@ -38,26 +38,6 @@ function SignUp() {
                         <InteractionIntro intro="Create your VoedieMeals-account"
                         />
                         <form onSubmit={handleSubmit(onFormSubmit)}>
-                            {/*<input*/}
-                            {/*    type="text"*/}
-                            {/*    className="input-field"*/}
-                            {/*    placeholder="Enter an username.."*/}
-                            {/*    id="username-field"*/}
-                            {/*    {...register("username", {*/}
-                            {/*        required: "Username is required",*/}
-                            {/*        minLength: {*/}
-                            {/*            value: 3,*/}
-                            {/*            message: "Your username must contain at least 3 characters."*/}
-                            {/*        }*/}
-                            {/*        ,*/}
-                            {/*        maxLength: {*/}
-                            {/*            value: 12,*/}
-                            {/*            message: "Your username can only contain 12 characters."*/}
-                            {/*        }*/}
-                            {/*        ,*/}
-                            {/*    })}*/}
-                            {/*/>*/}
-
                             <input
                                 type="email"
                                 className="input-field"
