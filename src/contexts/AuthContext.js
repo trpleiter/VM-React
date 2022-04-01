@@ -1,7 +1,9 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
-import { auth } from '../firebase';
-import { createUserWithEmailAndPassword,
+import React, {createContext, useContext, useState, useEffect} from "react";
+import {auth} from '../firebase';
+import {
+    createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
+    sendEmailVerification,
     onAuthStateChanged,
     signOut,
     sendPasswordResetEmail,
@@ -11,19 +13,20 @@ import { createUserWithEmailAndPassword,
 export const AuthContext = createContext({
     currentUser: null,
     signup: () => Promise,
+    verifyEmail: () => Promise,
     login: () => Promise,
     logout: () => Promise,
     forgotPasswordMail: () => Promise,
     resetPassword: () => Promise,
+
 });
 
 export const useAuth = () => useContext(AuthContext);
 
-function AuthContextProvider ({ children })
-{
+function AuthContextProvider({children}) {
     const [currentUser, setCurrentUser] = useState(null);
 
-    useEffect(()=>{
+    useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, user => {
             setCurrentUser(user)
         })
@@ -31,38 +34,43 @@ function AuthContextProvider ({ children })
         return unsubscribe;
     }, [])
 
-    function signup (email, password) {
-       return createUserWithEmailAndPassword(auth, email, password)
-   }
+    function signup(email, password) {
+        return createUserWithEmailAndPassword(auth, email, password)
+    }
 
-   function login (email, password) {
-       return signInWithEmailAndPassword(auth, email, password)
-   }
+    function verifyEmail(user) {
+        return sendEmailVerification(auth.currentUser)
+    }
 
-   function logout() {
+    function login(email, password) {
+        return signInWithEmailAndPassword(auth, email, password)
+    }
+
+    function logout() {
         return signOut(auth)
-   }
+    }
 
-   function forgotPasswordMail(email){
-        return sendPasswordResetEmail(auth, email, {url:'http://localhost:3000/login'})
-   }
+    function forgotPasswordMail(email) {
+        return sendPasswordResetEmail(auth, email, {url: 'http://localhost:3000/login'})
+    }
 
-   function resetPassword(oobCode, newPassword){
-       return confirmPasswordReset(auth, oobCode, newPassword)
-   }
+    function resetPassword(oobCode, newPassword) {
+        return confirmPasswordReset(auth, oobCode, newPassword)
+    }
 
-   const value = {
-       currentUser,
-       signup,
-       login,
-       logout,
-       forgotPasswordMail,
-       resetPassword,
-   }
+    const value = {
+        currentUser,
+        signup,
+        login,
+        logout,
+        forgotPasswordMail,
+        resetPassword,
+        verifyEmail
+    }
 
     return (
         <AuthContext.Provider value={value}>
-            { children }
+            {children}
         </AuthContext.Provider>
     )
 }

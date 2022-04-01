@@ -14,13 +14,14 @@ function SignUp() {
     const password = useRef({});
     password.current = watch("password", "");
     const [signUpError, setSignUpError] = useState('');
-    const {signup} = useAuth();
+    const {signup, verifyEmail} = useAuth();
 
     let navigate = useNavigate();
 
     function onFormSubmit(data) {
         signup(data.email, data.password)
             .then(() => {
+                verifyEmail()
                 navigate('/welcome')
             })
             .catch((error) => setSignUpError(error.message))

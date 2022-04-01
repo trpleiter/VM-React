@@ -16,6 +16,8 @@ body {
     color: var(--voediemealgrey);
 }
 
+* {cursor: url(https://ani.cursors-4u.net/nature/nat-11/nat1054.cur), auto !important;}
+
 .active {
     border: 2px solid hsl(138, 70%, 75%);
 }
