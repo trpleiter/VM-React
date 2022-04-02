@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# Welkom bij de VoedieMeals webapplicatie!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Een inleiding met korte beschrijving van de functionaliteit van de applicatie en screenshot van de belangrijkste pagina
+van de applicatie.
 
-## Available Scripts
+## Installatiehandleiding VoedieMeals
 
-In the project directory, you can run:
+Om de gemaakte applicatie “VoedieMeals” vanaf een gloednieuwe computer of als leek te draaien moeten een aantal dingen
+gerealiseerd worden. Allereerst is er een IDE (Integrated Development Enviroment) nodig. Dit is een editor/programma
+waarin code eenvoudiger kan worden geschreven. Het zou technisch gezien ook in een tekst-bestand kunnen worden
+geschreven, maar dat zal voor veel meer problemen gaan zorgen. WordPress en Visual Studio Code zij voorbeelden van
+IDE’s. In deze handleiding wordt gebruik gemaakt van WebStorm. WebStorm is een product van JetBrains, om het product te
+kunnen gebruiken moet het worden gedownload via https://www.jetbrains.com/webstorm/. Volg de stappen voor de installatie
+van WebStorm die worden weergegeven.
 
-### `npm start`
+### Git
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Wanneer WebStorm succesvol geinstaleerd is, kan er aan nieuwe projecten worden begonnen, maar er kunnen ook bestaande
+projecten worden binnengehaald om daar vervolgens op voort te borduren. In dit geval wordt de applicatie “VoedieMeals”
+opgehaald. Dit kan op verschillende manieren, namelijk door een gedownload bestand van het project te openen, of door
+het project van een Version Control System (VCS) op te halen, Git is hier een opensource voorbeeld van. In deze
+handleiding wordt het project van GitHub afgehaald. GitHub is niet hetzelfde als Git, een korte en simpele uitleg van
+GitHub is dat het een website is waar programmeurs hun projecten op een centrale plek beheren met Git. VoedieMeals is op
+te halen via de volgende link: https://github.com/trpleiter/VM-React
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Wanneer de genoemde link is geopend, kan het project worden gekopieerd door op de groene “Code” knop te klikken en
+vervolgens op de “copy” knop achter de HTTPS-link (zie Afbeelding 1).
+![img.png](src/assets/github.png)
+Afbeelding 1.
 
-### `npm test`
+Vervolgens kan bij het openen van WebStorm de gekopieerde link worden ingevoerd op de code voor de applicatie
+“VoedieMeals” op te halen. Hiervoor dient op “Get from VCS” te worden geklikt (zie Afbeelding 2). Daarna moet de van
+GitHub gekopieerde link in het veld “URL” worden geplaats. Ten slotte dient op “Clone” te worden geklikt (zie Afbeelding
+3). Hierna wordt de code opgehaald in de IDE.
+![img.png](src/assets/git1.png)
+Afbeelding 2.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![img.png](src/assets/git2.png)
+Afbeelding 3.
 
-### `npm run build`
+### Node.js
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Om de applicatie te kunnen ‘runnen’ is Node.js nodig. Wat Node.js allemaal precies is, is niet heel relevant om te weten
+om de applicatie te kunnen draaien. Het belangrijkste wat het doet is dat het een runtine omgeving verzorgd en dat er
+gebruik kan worden gemaakt van packages door middel van Node Package Manager (NPM). Packages vereenvoudigen code door al
+bestaande code te kunnen toevoegen in de eigen te schrijven code. Hierdoor hoeft niet telkens opnieuw het wiel te worden
+uitgevonden.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Installeer Node.js via de volgende link: https://nodejs.org/en/download/. Wanneer dit klaar is moet de terminal worden
+gewerkt. In afbeelding 4 staat weergegeven waar de terminal zich bevindt.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![img.png](src/assets/terminalIDE.png)
+Afbeelding 4.
 
-### `npm run eject`
+Typ hier:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### `node -v`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Als Node.js aanwezig is, wordt een versienummer weergegeven. Typ vervolgens:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### `npm -v`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Als NPM aanwezig is, wordt een versienummer weergegeven.
 
-## Learn More
+## Environment variables
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Voordat we de applicatie gaan runnen dienen de environment variables eerst te worden toegevoegd. Dit zijn variabelen die
+in feite geheim moeten blijven, daarom worden deze niet opgehaald van GitHub. Voeg daarom een file toe aan de hoofdmap
+voediemeals -> New -> File (zie Afbeelding 5).
+![img.png](src/assets/env.png)
+Afbeelding 5.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Noem de nieuwe file “.env” zoals die als in afbeelding … staat. Plak hier de volgende tekst in:
+REACT_APP_API_KEY=
 
-### Code Splitting
+REACT_APP_FIREBASE_API_KEY=
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+REACT_APP_FIREBASE_AUTH_DOMAIN=
 
-### Analyzing the Bundle Size
+REACT_APP_FIREBASE_PROJECT_ID=
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+REACT_APP_FIREBASE_STORAGE_BUCKET= 
 
-### Making a Progressive Web App
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID= 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+REACT_APP_FIREBASE_APP_ID=
 
-### Advanced Configuration
+EMAIL voor Firebase= 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+WACHTWOORD voor Firebase=
 
-### Deployment
+Typ vervolgens weer in de terminal “npm run build”. Typ als allerlaastste stap “npm run start” en de applicatie zal in
+de browser tevoorschijn komen op [http://localhost:3000](http://localhost:3000).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Vanaf dit punt kun je genieten van VoedieMeals!
 
-### `npm run build` fails to minify
+Er kan zelfstanding een account worden aangemaakt, maar het account voediemeals@gmail.com met wachtwoord: “...” bestaat
+al.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
