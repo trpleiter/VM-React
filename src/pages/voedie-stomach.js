@@ -9,14 +9,14 @@ import mouseicon from "../assets/mouse-icon.png";
 import cookicon from "../assets/cook-icon.png";
 import Button from "../components/button/Button";
 import Footer from "../components/footer/Footer";
-import { addDoc, collection } from "firebase/firestore";
+import {addDoc, collection} from "firebase/firestore";
 import {db} from "../firebase";
 import {useAuth} from "../contexts/AuthContext";
 
 function VoedieStomach() {
     const [query, setQuery] = useState('');
     const [leftover, setLeftover] = useState('');
-    const { currentUser } = useAuth();
+    const {currentUser} = useAuth();
 
     const defaultRecipes = [
         {
@@ -84,6 +84,7 @@ function VoedieStomach() {
                 const resultRecipes = await axios.get(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${leftover}&apiKey=${process.env.REACT_APP_API_KEY}`);
                 console.log(resultRecipes.data);
                 setRecipes(resultRecipes.data);
+
             } catch (e) {
                 console.error(e);
                 toggleError(true);
@@ -115,14 +116,9 @@ function VoedieStomach() {
         trackLeftovers();
     }
 
-    if (recipes === []) {
-        console.log(true)
-    }
-
     return (
         <>
             <NavigationBar/>
-
             <IntroFunctionality
                 title="Voedie stomach!"
                 intro="Prepare your VoedieMeal via the following steps:"
@@ -172,7 +168,7 @@ function VoedieStomach() {
                 />
             </form>
 
-            <h3>Delicious recipes</h3>
+            <h3>Delicious {leftover.toUpperCase()} recipes</h3>
             <div className="background-container">
                 {loading && <div className="loader"></div>}
                 <div className="recipeResults">

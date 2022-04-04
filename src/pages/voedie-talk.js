@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import axios from "axios";
 import "../styles/voedie-talk.css";
 import NavigationBar from "../components/navigationbar/Nav-bar";
@@ -44,6 +44,11 @@ function VoedieTalk() {
         toggleLoading(false);
     }
 
+    let noLeftoverResult = ""
+    if (leftovers.length === 0) {
+        noLeftoverResult = 'You can build history by searching for recipes on the "Voedie Stomach" page, if you still see this message after pressing "Show my history", you should search for some recipes on that page first! '
+    }
+
     return (
         <>
             <NavigationBar/>
@@ -75,6 +80,7 @@ function VoedieTalk() {
                         {error &&
                         <span>Something went wrong, we could not retrieve the data. Sorry for the inconvenience.</span>}
                         <ol>
+                            {noLeftoverResult}
                             {leftovers.map((leftover) => {
                                 return <li key={leftover.id}>{leftover.leftover} </li>
                             })}

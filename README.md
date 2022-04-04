@@ -1,7 +1,24 @@
 # Welkom bij de VoedieMeals webapplicatie!
 
-Een inleiding met korte beschrijving van de functionaliteit van de applicatie en screenshot van de belangrijkste pagina
-van de applicatie.
+Met behulp van VoedieMeals wordt er op een positieve en leuke manier inzicht gegeven aan de gebruiker welke gekochte
+voedingsmiddelen regelmatig overblijven als restantjes. De webapplicatie zal deels als informatieve bron fungeren door
+het doorsturen naar sites waar meer informatie is rondom het effect van voeding op het klimaat. Daarnaast heeft de
+webapplicatie interactieve aspecten. Allereerst kan de gebruiker restantjes in te vullen in de webapplicatie. Vervolgens
+komen er gerechten naar voren waar deze restantjes als ingrediënten worden gebruikt. Tegelijkertijd wordt in de database
+opgeslagen welke restanten zijn ingevuld (account vereist). 
+
+![img.png](src/assets/voedie-stomach-page.png)
+*Schermafdruk Voedie stomach pagina*
+
+Bij langdurig gebruik van de app wordt inzichtelijk gemaakt
+welke voedingsmiddelen tot de restanten behoren om de gebruiker de optie te geven om zijn of haar koopgedrag aan te
+passen. Om van VoedieMeals een iets luchtiger concept te maken wordt er ook een tweede interactief aspect toegevoegd,
+namelijk een generator voor willekeurige voedingsfeitjes of voedingsgrappen. 
+
+![img.png](src/assets/voedie-talk-page.png)
+*Schermafdruk Voedie talk pagina*
+
+Met deze opzet wordt er ongegeneerd, gezellig en heerlijk gegeten.
 
 ## Installatiehandleiding VoedieMeals
 
@@ -26,17 +43,17 @@ te halen via de volgende link: https://github.com/trpleiter/VM-React
 Wanneer de genoemde link is geopend, kan het project worden gekopieerd door op de groene “Code” knop te klikken en
 vervolgens op de “copy” knop achter de HTTPS-link (zie Afbeelding 1).
 ![img.png](src/assets/github.png)
-Afbeelding 1.
+*Afbeelding 1*
 
 Vervolgens kan bij het openen van WebStorm de gekopieerde link worden ingevoerd op de code voor de applicatie
 “VoedieMeals” op te halen. Hiervoor dient op “Get from VCS” te worden geklikt (zie Afbeelding 2). Daarna moet de van
 GitHub gekopieerde link in het veld “URL” worden geplaats. Ten slotte dient op “Clone” te worden geklikt (zie Afbeelding
 3). Hierna wordt de code opgehaald in de IDE.
 ![img.png](src/assets/git1.png)
-Afbeelding 2.
+*Afbeelding 2*
 
 ![img.png](src/assets/git2.png)
-Afbeelding 3.
+*Afbeelding 3*
 
 ### Node.js
 
@@ -50,7 +67,7 @@ Installeer Node.js via de volgende link: https://nodejs.org/en/download/. Wannee
 gewerkt. In afbeelding 4 staat weergegeven waar de terminal zich bevindt.
 
 ![img.png](src/assets/terminalIDE.png)
-Afbeelding 4.
+*Afbeelding 4*
 
 Typ hier:
 
@@ -68,7 +85,7 @@ Voordat we de applicatie gaan runnen dienen de environment variables eerst te wo
 in feite geheim moeten blijven, daarom worden deze niet opgehaald van GitHub. Voeg daarom een file toe aan de hoofdmap
 voediemeals -> New -> File (zie Afbeelding 5).
 ![img.png](src/assets/env.png)
-Afbeelding 5.
+*Afbeelding 5*
 
 Noem de nieuwe file “.env” zoals die als in afbeelding … staat. Plak hier de volgende tekst in:
 REACT_APP_API_KEY=
@@ -79,13 +96,13 @@ REACT_APP_FIREBASE_AUTH_DOMAIN=
 
 REACT_APP_FIREBASE_PROJECT_ID=
 
-REACT_APP_FIREBASE_STORAGE_BUCKET= 
+REACT_APP_FIREBASE_STORAGE_BUCKET=
 
-REACT_APP_FIREBASE_MESSAGING_SENDER_ID= 
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=
 
 REACT_APP_FIREBASE_APP_ID=
 
-EMAIL voor Firebase= 
+EMAIL voor Firebase=
 
 WACHTWOORD voor Firebase=
 
