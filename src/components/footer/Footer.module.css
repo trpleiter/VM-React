@@ -1,7 +1,9 @@
 .footerContainer {
     display: flex;
-    flex-direction: row;
     align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     font-size: 12px;
     background-color: var(--voediemealgreen);
     color: var(--voediemealgrey);

@@ -2,9 +2,9 @@ import React from "react";
 import { NavLink } from 'react-router-dom';
 import styles from './Footer.module.css'
 
-function Footer ({ aboutus, contact, faq, fillpage }) {
+function Footer () {
     return (
-        <footer className={`${styles.footerContainer} ${fillpage}`}>
+        <footer className={styles.footerContainer}>
                 <span>© 2022 VoedieMeals</span>
                 <ul className={styles['footerItems']}>
                     <li>

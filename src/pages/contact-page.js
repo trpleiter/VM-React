@@ -92,9 +92,7 @@ function Contactpage() {
                     </form>
                 </main>
 
-                <Footer
-                    fillpage="lower-footer"
-                />
+                <Footer />
             </div>
         </>
     )

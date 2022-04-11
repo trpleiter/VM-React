@@ -28,7 +28,7 @@ function Loginpage() {
     return (
         <>
             <NavigationBar/>
-            <div className="page-container">
+            <div className="page-container-login">
                 <main className="account-main">
                     <div className="login-container">
                         <InteractionIntro intro="Login">
@@ -84,9 +84,7 @@ function Loginpage() {
                         </form>
                     </div>
                 </main>
-                <Footer
-                    fillpage="lower-footer"
-                />
+                <Footer />
             </div>
         </>
     )

@@ -1,20 +1,17 @@
 .page-container {
     background-image: url("../assets/ingredients-background.jpg");
     color: var(--voediemealgrey);
-    height: 100vh;
-    padding:100px;
+    height: 62vh;
+    padding:200px;
     display: flex;
     justify-content: center;
 }
-
 
 .email-main {
     background-color: white;
     border-radius: 8px;
     border: 1px solid #dadce0;
     display: flex;
-    justify-content: center;
-    align-items: center;
     height: fit-content;
     width: 450px;
 }
@@ -22,7 +19,6 @@
 .email-notification-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
     padding: 20px;
 }
@@ -44,12 +40,4 @@ h3 {
 
 #mail-icon {
     width: 150px;
-}
-
-.lower-footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    height: 25px;
-    width: 100%;
 }

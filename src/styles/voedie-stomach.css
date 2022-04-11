@@ -129,13 +129,6 @@ input {
     width: 150px;
 }
 
-h3 {
-    font-size: 30px;
-    margin-left: 50px;
-    margin-top: 50px;
-    margin-bottom: 20px;
-}
-
 .background-container {
     background-image: url("../assets/ingredients-background.jpg");
 }
@@ -151,7 +144,6 @@ h3 {
     background-color: white;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     width: 350px;
     height: 250px;
     padding: 16px;

@@ -66,7 +66,7 @@ function SignUp() {
                                     ,
                                     maxLength: {
                                         value: 25,
-                                        message: "Your username can only contain 25 characters"
+                                        message: "Your password can only contain 25 characters"
                                     }
                                 })}
                             />
@@ -99,9 +99,7 @@ function SignUp() {
                         </form>
                     </div>
                 </main>
-                <Footer
-                    fillpage="lower-footer"
-                />
+                <Footer />
             </div>
         </>
     )

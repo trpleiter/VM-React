@@ -28,9 +28,7 @@ function ContactNotification() {
 
                 </div>
             </main>
-            <Footer
-                fillpage="lower-footer"
-            />
+            <Footer />
             </div>
         </>
     )

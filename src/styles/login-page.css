@@ -1,8 +1,8 @@
-.page-container {
+.page-container-login {
     background-image: url("../assets/ingredients-background.jpg");
     color: var(--voediemealgrey);
-    height: 100vh;
-    padding:100px;
+    height: 62vh;
+    padding:200px;
     display: flex;
     justify-content: center;
 }
@@ -13,7 +13,6 @@
     border: 1px solid #dadce0;
     display: flex;
     justify-content: center;
-    align-items: center;
     height: fit-content;
     width: 450px;
 }
@@ -21,7 +20,6 @@
 .login-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
     padding: 20px;
 }
@@ -30,13 +28,6 @@
     font-size: 14px;
     padding: 16px;
     margin-bottom: 0px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
 }
 
 .input-field {
@@ -66,14 +57,6 @@ form {
     color: red;
     padding: 0px;
     font-size: 12px;
-}
-
-.lower-footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    height: 25px;
-    width: 100%;
 }
 
 @media screen and (min-width: 820px) {

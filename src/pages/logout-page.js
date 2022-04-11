@@ -20,9 +20,7 @@ function LogoutPage() {
                     </InteractionIntro>
                 </div>
             </main>
-            <Footer
-                fillpage="lower-footer"
-            />
+            <Footer />
             </div>
         </>
     )

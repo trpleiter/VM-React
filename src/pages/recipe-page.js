@@ -116,9 +116,7 @@ function Recipepage() {
                     </div>
                 </main>
             </div>
-            <Footer
-                fillpage="lower-footer"
-            />
+            <Footer />
         </>
     )
 }
