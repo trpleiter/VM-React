@@ -12,25 +12,25 @@ import {
 
 export const AuthContext = createContext({
     currentUser: null,
+    status: 'pending',
     signup: () => Promise,
     verifyEmail: () => Promise,
     login: () => Promise,
     logout: () => Promise,
     forgotPasswordMail: () => Promise,
     resetPassword: () => Promise,
-
 });
 
 export const useAuth = () => useContext(AuthContext);
 
 function AuthContextProvider({children}) {
     const [currentUser, setCurrentUser] = useState(null);
-
+    const [status, setStatus] = useState('pending');
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, user => {
             setCurrentUser(user)
+            setStatus('done')
         })
-
         return unsubscribe;
     }, [])
 
@@ -70,7 +70,7 @@ function AuthContextProvider({children}) {
 
     return (
         <AuthContext.Provider value={value}>
-            {children}
+            {status === 'done' ? children : <div className="loader"></div>}
         </AuthContext.Provider>
     )
 }
