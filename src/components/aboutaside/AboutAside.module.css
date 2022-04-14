@@ -8,7 +8,7 @@
     border: solid 1px black;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1550px) {
 .asidebackground {
     height: 50vh;
 }
