@@ -9,7 +9,6 @@ import Button from "../components/button/Button";
 import {addDoc, collection} from "firebase/firestore";
 import {db} from "../firebase";
 
-
 function Contactpage() {
     const {register, handleSubmit, formState: {errors, isSubmitting}} = useForm({mode: 'onBlur'});
     const [error, toggleError] = useState(false);
@@ -18,16 +17,16 @@ function Contactpage() {
     function onFormSubmit(data) {
         addDoc(collection(db, 'contact'),
             {
-            firstname: data.firstname,
-            surname: data.surname,
-            email: data.email,
-            message: data.message,
-        })
-            .then   (() => {
+                firstname: data.firstname,
+                surname: data.surname,
+                email: data.email,
+                message: data.message,
+            })
+            .then(() => {
                 navigate('/contact-notification')
             })
             .catch((error) => toggleError(error.message))
-    };
+    }
 
     return (
         <>
@@ -76,7 +75,7 @@ function Contactpage() {
                                 cols="30"
                                 rows="10"
                                 {...register("message")}
-                            ></textarea>
+                            />
 
                             {errors.email && <span id="email-warning">{errors.email.message}</span>}
                             {error &&
@@ -91,8 +90,7 @@ function Contactpage() {
                         </div>
                     </form>
                 </main>
-
-                <Footer />
+                <Footer/>
             </div>
         </>
     )

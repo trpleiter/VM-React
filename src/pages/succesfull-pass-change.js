@@ -8,20 +8,18 @@ import Footer from "../components/footer/Footer";
 function SuccesfullPassChange() {
     return (
         <>
-            <NavigationBar
-            />
+            <NavigationBar/>
             <div className="page-container">
-            <main className="email-main">
-                <div className="email-notification-container">
-                    <InteractionIntro>
-                        <h3>Your password has been changed!</h3>
-                        <p>The new password that you have chosen is succesfully changed. Do not forget it this time!
-                              😉</p>
-                    </InteractionIntro>
-                </div>
-            </main>
-
-            <Footer />
+                <main className="email-main">
+                    <div className="email-notification-container">
+                        <InteractionIntro>
+                            <h3>Your password has been changed!</h3>
+                            <p>The new password that you have chosen is succesfully changed. Do not forget it this time!
+                                😉</p>
+                        </InteractionIntro>
+                    </div>
+                </main>
+                <Footer/>
             </div>
         </>
     )

@@ -50,9 +50,9 @@ function AboutVoedieMeals() {
                     </AboutUs>
                 </div>
             </main>
-            <Footer />
+            <Footer/>
         </>
-)
+    )
 }
 
 export default AboutVoedieMeals;

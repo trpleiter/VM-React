@@ -5,19 +5,17 @@ import InteractionIntro from "../components/interactionintro/Interaction-intro";
 import emailicon from "../assets/email-icon.png";
 import Footer from "../components/footer/Footer";
 
-
 function SignUpNotification() {
     return (
         <>
-            <NavigationBar
-            />
+            <NavigationBar/>
             <div className="page-container">
                 <main className="email-main">
                     <div className="email-notification-container">
                         <InteractionIntro>
                             <h3>Welcome!</h3>
                             <p>We are happy to have you aboard! In your mail you will find a confirmation of the
-                              registration.</p>
+                                registration.</p>
                         </InteractionIntro>
                         <img
                             src={emailicon}
@@ -25,10 +23,9 @@ function SignUpNotification() {
                             alt="mail"
                         />
                         <p>Did not receive the email? Check your spam filter as well.</p>
-
                     </div>
                 </main>
-                <Footer />
+                <Footer/>
             </div>
         </>
     )

@@ -8,14 +8,12 @@ import InteractionIntro from "../components/interactionintro/Interaction-intro";
 import Button from "../components/button/Button";
 import Footer from "../components/footer/Footer";
 
-
 function SignUp() {
     const {register, handleSubmit, formState: {errors, isSubmitting}, watch} = useForm({mode: 'onBlur'});
     const password = useRef({});
     password.current = watch("password", "");
     const [signUpError, setSignUpError] = useState('');
     const {signup, verifyEmail} = useAuth();
-
     let navigate = useNavigate();
 
     function onFormSubmit(data) {
@@ -29,9 +27,7 @@ function SignUp() {
 
     return (
         <>
-            <NavigationBar
-                login="active"
-            />
+            <NavigationBar/>
             <div className="page-container">
                 <main className="account-main">
                     <div className="login-container">
@@ -51,7 +47,6 @@ function SignUp() {
                                     }
                                 })}
                             />
-
                             <input
                                 type="password"
                                 className="input-field"
@@ -95,11 +90,10 @@ function SignUp() {
                                 type="submit"
                                 text="Sign up!"
                             />
-
                         </form>
                     </div>
                 </main>
-                <Footer />
+                <Footer/>
             </div>
         </>
     )

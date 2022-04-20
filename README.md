@@ -23,16 +23,16 @@ Met deze opzet wordt er ongegeneerd, gezellig en heerlijk gegeten.
 ## Installatiehandleiding VoedieMeals
 
 Om de gemaakte applicatie “VoedieMeals” vanaf een gloednieuwe computer of als leek te draaien moeten een aantal dingen
-gerealiseerd worden. Allereerst is er een IDE (Integrated Development Enviroment) nodig. Dit is een editor/programma
+gerealiseerd worden. Allereerst is er een IDE (Integrated Development Environment) nodig. Dit is een editor/programma
 waarin code eenvoudiger kan worden geschreven. Het zou technisch gezien ook in een tekst-bestand kunnen worden
-geschreven, maar dat zal voor veel meer problemen gaan zorgen. WordPress en Visual Studio Code zij voorbeelden van
+geschreven, maar dat zal voor veel meer problemen gaan zorgen. WebStorm en Visual Studio Code zij voorbeelden van
 IDE’s. In deze handleiding wordt gebruik gemaakt van WebStorm. WebStorm is een product van JetBrains, om het product te
 kunnen gebruiken moet het worden gedownload via https://www.jetbrains.com/webstorm/. Volg de stappen voor de installatie
 van WebStorm die worden weergegeven.
 
 ### Git
 
-Wanneer WebStorm succesvol geinstaleerd is, kan er aan nieuwe projecten worden begonnen, maar er kunnen ook bestaande
+Wanneer WebStorm succesvol geïnstalleerd is, kan er aan nieuwe projecten worden begonnen, maar er kunnen ook bestaande
 projecten worden binnengehaald om daar vervolgens op voort te borduren. In dit geval wordt de applicatie “VoedieMeals”
 opgehaald. Dit kan op verschillende manieren, namelijk door een gedownload bestand van het project te openen, of door
 het project van een Version Control System (VCS) op te halen, Git is hier een opensource voorbeeld van. In deze
@@ -45,7 +45,7 @@ vervolgens op de “copy” knop achter de HTTPS-link (zie Afbeelding 1).
 ![img.png](src/assets/github.png)
 *Afbeelding 1*
 
-Vervolgens kan bij het openen van WebStorm de gekopieerde link worden ingevoerd op de code voor de applicatie
+Vervolgens kan bij het openen van WebStorm de gekopieerde link worden ingevoerd om de code voor de applicatie
 “VoedieMeals” op te halen. Hiervoor dient op “Get from VCS” te worden geklikt (zie Afbeelding 2). Daarna moet de van
 GitHub gekopieerde link in het veld “URL” worden geplaats. Ten slotte dient op “Clone” te worden geklikt (zie Afbeelding
 3). Hierna wordt de code opgehaald in de IDE.

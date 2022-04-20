@@ -28,13 +28,13 @@ function Homepage() {
                         <li>
                             {!currentUser &&
                             <Link className="nav-item" to="/login">
-                            <img src={loginimg} alt="login" id="login"/>
-                            Login
+                                <img src={loginimg} alt="login" id="login"/>
+                                Login
                             </Link>}
                             {currentUser &&
                             <Link className="nav-item" to="/logout" onClick={async e => {
-                                      e.preventDefault()
-                                      logout()
+                                e.preventDefault()
+                                logout()
                                 navigate('/logout')
                             }}>
                                 <img src={loginimg} alt="logout" id="login"/>
@@ -112,7 +112,7 @@ function Homepage() {
                 <iframe className="grid-item" id="ytvid" src="https://www.youtube.com/embed/Ge56ZwJat5A"
                         title="YouTube video player"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                ></iframe>
+                />
             </main>
             <Footer/>
         </>

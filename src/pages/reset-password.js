@@ -8,7 +8,7 @@ import Footer from "../components/footer/Footer";
 import {useAuth} from "../contexts/AuthContext";
 import {useLocation, useNavigate} from "react-router-dom";
 
-function useQuery () {
+function useQuery() {
     const location = useLocation();
     return new URLSearchParams(location.search);
 }
@@ -36,8 +36,7 @@ function ResetPassword() {
 
     return (
         <>
-            <NavigationBar
-            />
+            <NavigationBar/>
             <div className="page-container-password">
                 <main className="password-main">
                     <div className="forgot-password-container">
@@ -80,8 +79,6 @@ function ResetPassword() {
                             {errors.password && <span id="password-warning">{errors.password.message}</span>}
                             {errors.confirmpassword &&
                             <span id="password-warning">{errors.confirmpassword.message}</span>}
-
-
                             <Button
                                 type="submit"
                                 text="Reset password!"
@@ -89,7 +86,7 @@ function ResetPassword() {
                         </form>
                     </div>
                 </main>
-                <Footer />
+                <Footer/>
             </div>
         </>
     )

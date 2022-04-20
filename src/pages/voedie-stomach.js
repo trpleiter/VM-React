@@ -16,6 +16,8 @@ import {useAuth} from "../contexts/AuthContext";
 function VoedieStomach() {
     const [query, setQuery] = useState('');
     const [leftover, setLeftover] = useState('');
+    const [error, toggleError] = useState(false);
+    const [loading, toggleLoading] = useState(false);
     const {currentUser} = useAuth();
 
     const defaultRecipes = [
@@ -72,8 +74,6 @@ function VoedieStomach() {
     ];
 
     const [recipes, setRecipes] = useState(defaultRecipes);
-    const [error, toggleError] = useState(false);
-    const [loading, toggleLoading] = useState(false);
 
     useEffect(() => {
         async function fetchRecipe() {
@@ -151,7 +151,6 @@ function VoedieStomach() {
                     <h2>Cook & enjoy</h2>
                     <p>Follow the instructions on the chosen recipe and enjoy your VoedieMeal!</p>
                 </section>
-
             </div>
             <form className="searchbar" onSubmit={onFormSubmit}>
                 <input
@@ -170,7 +169,7 @@ function VoedieStomach() {
 
             <h3>Delicious {leftover.toUpperCase()} recipes</h3>
             <div className="background-container">
-                {loading && <div className="loader"></div>}
+                {loading && <div className="loader"/>}
                 <div className="recipeResults">
                     {recipes.map((infoRecipes) => {
                         return (

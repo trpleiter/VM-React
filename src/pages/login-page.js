@@ -8,7 +8,6 @@ import InteractionIntro from "../components/interactionintro/Interaction-intro";
 import Button from "../components/button/Button";
 import Footer from "../components/footer/Footer";
 
-
 function Loginpage() {
     const {register, handleSubmit, formState: {errors, isSubmitting}} = useForm({mode: 'onChange'});
     const {login} = useAuth();
@@ -84,7 +83,7 @@ function Loginpage() {
                         </form>
                     </div>
                 </main>
-                <Footer />
+                <Footer/>
             </div>
         </>
     )
