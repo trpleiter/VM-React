@@ -82,7 +82,7 @@
     border: 10px solid white;
     border-radius: 50%;
     border-top: 10px solid var(--voediemealgreen);
-    background-color:var(--voediemealgrey);
+    background-color: var(--voediemealgrey);
     margin: auto auto 30px auto;
     width: 60px;
     height: 60px;
@@ -93,7 +93,7 @@
     border: 10px solid white;
     border-radius: 50%;
     border-top: 10px solid var(--voediemealgreen);
-    background-color:var(--voediemealgrey);
+    background-color: var(--voediemealgrey);
     margin: auto auto 30px auto;
     width: 60px;
     height: 60px;
@@ -104,7 +104,7 @@
     border: 10px solid white;
     border-radius: 50%;
     border-top: 10px solid var(--voediemealgrey);
-    background-color:var(--voediemealgreen);
+    background-color: var(--voediemealgreen);
     margin: auto auto 30px auto;
     width: 60px;
     height: 60px;
@@ -112,8 +112,12 @@
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @media screen and (min-width: 768px) {

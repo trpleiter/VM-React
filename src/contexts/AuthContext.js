@@ -12,7 +12,6 @@ import {
 
 export const AuthContext = createContext({
     currentUser: null,
-    status: 'pending',
     signup: () => Promise,
     verifyEmail: () => Promise,
     login: () => Promise,
@@ -76,4 +75,3 @@ function AuthContextProvider({children}) {
 }
 
 export default AuthContextProvider;
-

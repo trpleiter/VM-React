@@ -6,6 +6,7 @@ import {
     useLocation,
     Outlet,
 } from "react-router-dom";
+import "./styles/App.css";
 import Homepage from "./pages/homepage";
 import VoedieTalk from "./pages/voedie-talk";
 import VoedieStomach from "./pages/voedie-stomach";

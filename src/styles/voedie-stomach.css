@@ -182,7 +182,7 @@ input {
     border: 10px solid var(--voediemealgrey);
     border-radius: 50%;
     border-top: 10px solid var(--voediemealgreen);
-    background-color:white;
+    background-color: white;
     margin: auto auto 30px auto;
     width: 60px;
     height: 60px;
@@ -190,8 +190,12 @@ input {
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 

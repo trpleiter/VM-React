@@ -2,11 +2,10 @@
     background-image: url("../assets/ingredients-background.jpg");
     color: var(--voediemealgrey);
     height: 80vh;
-    padding:100px;
+    padding: 100px;
     display: flex;
     justify-content: center;
 }
-
 
 .recipe-main {
     background-color: white;
@@ -57,7 +56,7 @@ h3 {
     border: 10px solid var(--voediemealgrey);
     border-radius: 50%;
     border-top: 10px solid var(--voediemealgreen);
-    background-color:white;
+    background-color: white;
     margin: auto auto 30px auto;
     width: 60px;
     height: 60px;
@@ -65,8 +64,12 @@ h3 {
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .potential-error {
@@ -76,7 +79,7 @@ h3 {
     background-color: white;
     display: block;
     width: 450px;
-    margin: auto auto 30px auto;
+    margin: auto auto 50px auto;
     height: 10px;
     padding: 16px;
     border: 1px solid black;

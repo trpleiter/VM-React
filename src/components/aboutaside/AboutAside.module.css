@@ -9,7 +9,7 @@
 }
 
 @media screen and (min-width: 1550px) {
-.asidebackground {
-    height: 50vh;
-}
+    .asidebackground {
+        height: 50vh;
+    }
 }

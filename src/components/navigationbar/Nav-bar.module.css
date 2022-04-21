@@ -39,6 +39,7 @@
         font-weight: bold;
         border-radius: 15px;
     }
+
     .navItem:hover {
         background-color: hsl(138, 70%, 80%);
     }
