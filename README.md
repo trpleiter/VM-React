@@ -76,6 +76,10 @@ gewerkt. In afbeelding 4 staat weergegeven waar de terminal zich bevindt.
 
 Typ hier:
 
+### `npm install`
+
+Typ vervolgens:
+
 ### `node -v`
 
 Als Node.js aanwezig is, wordt een versienummer weergegeven. Typ vervolgens:
